@@ -11,18 +11,19 @@ html {
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 240 10% 10%;
-    --card: 0 0% 97%;
-    --card-foreground: 240 10% 10%;
-    --popover: 0 0% 97%;
-    --popover-foreground: 240 10% 10%;
-    --primary: 270 70% 55%;
+    --foreground: 260 30% 15%;
+    --card: 260 10% 97%;
+    --card-foreground: 260 30% 15%;
+    --popover: 260 10% 97%;
+    --popover-foreground: 260 30% 15%;
+    --primary: 268 45% 48%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 240 6% 93%;
-    --secondary-foreground: 240 10% 10%;
-    --muted: 220 9% 75%;
-    --muted-foreground: 220 9% 40%;
-    --accent: 270 70% 55%;
+    --primary-glow: 280 60% 65%;
+    --secondary: 260 10% 93%;
+    --secondary-foreground: 260 30% 15%;
+    --muted: 250 10% 75%;
+    --muted-foreground: 250 10% 40%;
+    --accent: 185 55% 45%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
