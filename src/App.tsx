@@ -37,7 +37,8 @@ const App = () => (
         <Footer />
         <FloatingDemo />
       </BrowserRouter>
-    </TooltipProvider>
+      </TooltipProvider>
+    </ThemeProvider>
   </QueryClientProvider>
 );
 

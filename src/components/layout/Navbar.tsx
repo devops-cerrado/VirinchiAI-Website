@@ -135,6 +135,13 @@ const Navbar = () => {
                   </NavLink>
                 ))}
                 <div className="pt-4 space-y-2 border-t border-border">
+                  <button
+                    onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                    className="flex items-center gap-2 w-full text-left px-4 py-3 text-sm text-muted-foreground hover:text-foreground"
+                  >
+                    {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+                    {theme === "dark" ? "Light Mode" : "Dark Mode"}
+                  </button>
                   <button className="block w-full text-left px-4 py-3 text-sm text-muted-foreground">
                     Sign In
                   </button>
