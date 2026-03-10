@@ -28,7 +28,7 @@ const DataIntegration = () => (
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.05 }}
-            className="bg-card border border-border rounded-xl p-4 text-center hover:border-primary/40 hover:glow-red transition-all cursor-pointer"
+            className="bg-card border border-border rounded-xl p-4 text-center hover:border-primary/40 hover:glow-brand transition-all cursor-pointer"
           >
             <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-2">
               <span className="text-primary font-bold text-xs">{name.charAt(0)}</span>
