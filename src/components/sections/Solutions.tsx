@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { solutions, industries } from "@/constants/solutionsData";
 
 const Solutions = () => (
-  <section className="section-padding bg-background">
+  <section id="solutions" className="section-padding bg-background">
     <div className="max-w-7xl mx-auto">
       {/* Solutions */}
       <div className="text-center mb-12">

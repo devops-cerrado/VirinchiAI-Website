@@ -25,11 +25,7 @@ const App = () => (
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/why-virinchi" element={<WhyVirinchiPage />} />
-          <Route path="/platform" element={<PlatformPage />} />
-          <Route path="/solutions" element={<SolutionsPage />} />
           <Route path="/pricing" element={<PricingPage />} />
-          <Route path="/about" element={<AboutPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
