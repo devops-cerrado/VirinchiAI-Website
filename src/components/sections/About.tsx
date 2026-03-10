@@ -49,7 +49,7 @@ const About = () => (
           <Globe className="w-8 h-8 text-primary mb-4" />
           <h3 className="font-heading font-bold text-xl text-foreground mb-3">Global Presence</h3>
           <p className="text-muted-foreground leading-relaxed">
-            Headquartered in the US with offices across Europe and Asia-Pacific, we serve enterprises in banking, insurance, healthcare, and manufacturing worldwide.
+            Headquartered in the US with offices in India.
           </p>
         </div>
       </div>
