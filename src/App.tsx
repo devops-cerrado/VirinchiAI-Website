@@ -6,11 +6,7 @@ import { ThemeProvider } from "next-themes";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Home from "./pages/Home";
-import WhyVirinchiPage from "./pages/WhyVirinchiPage";
-import PlatformPage from "./pages/PlatformPage";
-import SolutionsPage from "./pages/SolutionsPage";
 import PricingPage from "./pages/PricingPage";
-import AboutPage from "./pages/AboutPage";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 import FloatingDemo from "./components/FloatingDemo";
@@ -29,11 +25,7 @@ const App = () => (
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/why-virinchi" element={<WhyVirinchiPage />} />
-          <Route path="/platform" element={<PlatformPage />} />
-          <Route path="/solutions" element={<SolutionsPage />} />
           <Route path="/pricing" element={<PricingPage />} />
-          <Route path="/about" element={<AboutPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />

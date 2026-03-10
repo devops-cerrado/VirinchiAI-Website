@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import { MapPin, Users, Rocket, Globe } from "lucide-react";
-import CTABanner from "@/components/sections/CTABanner";
+import { Rocket, Globe } from "lucide-react";
 
 const stats = [
   { label: "Founded", value: "2020" },
@@ -9,16 +8,16 @@ const stats = [
   { label: "Countries", value: "12" },
 ];
 
-const AboutPage = () => (
-  <div className="pt-32 pb-0">
-    <div className="max-w-7xl mx-auto px-4 md:px-8 mb-20">
+const About = () => (
+  <section id="about" className="section-padding bg-secondary/30">
+    <div className="max-w-7xl mx-auto">
       <div className="text-center mb-16">
         <span className="text-primary text-sm font-semibold tracking-wider uppercase mb-3 block">ABOUT US</span>
-        <h1 className="font-heading text-4xl md:text-6xl font-bold text-foreground mb-6">
+        <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground mb-6">
           Building the Future of Enterprise AI
-        </h1>
+        </h2>
         <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-          Virinchi AI is on a mission to democratize enterprise AI — making it sovereign, scalable, and accessible to organizations of every size.
+          Virinchi AI is on a mission to democratise enterprise AI — making it sovereign, scalable, and accessible to organisations of every size.
         </p>
       </div>
 
@@ -55,8 +54,7 @@ const AboutPage = () => (
         </div>
       </div>
     </div>
-    <CTABanner />
-  </div>
+  </section>
 );
 
-export default AboutPage;
+export default About;

@@ -23,7 +23,7 @@ const features = [
 ];
 
 const Platform = () => (
-  <section className="section-padding bg-secondary/30">
+  <section id="platform" className="section-padding bg-secondary/30">
     <div className="max-w-7xl mx-auto">
       <div className="text-center mb-16">
         <span className="text-primary text-sm font-semibold tracking-wider uppercase mb-3 block">PLATFORM</span>

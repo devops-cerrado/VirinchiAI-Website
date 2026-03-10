@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { useState, useEffect, useCallback } from "react";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import logo from "@/assets/virinchi_full_logo_bg_removed.png";
 import { navLinks } from "@/constants/navLinks";
 import { motion, AnimatePresence } from "framer-motion";
@@ -11,6 +11,7 @@ const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [showAnnouncement, setShowAnnouncement] = useState(true);
   const location = useLocation();
+  const navigate = useNavigate();
   const { theme, setTheme } = useTheme();
 
   useEffect(() => {
@@ -22,6 +23,37 @@ const Navbar = () => {
   useEffect(() => {
     setMobileOpen(false);
   }, [location]);
+
+  // Handle hash scrolling after navigation
+  useEffect(() => {
+    if (location.hash) {
+      setTimeout(() => {
+        const el = document.querySelector(location.hash);
+        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 100);
+    }
+  }, [location]);
+
+  const handleNavClick = useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
+      if (path.startsWith("/#")) {
+        e.preventDefault();
+        const hash = path.slice(1); // e.g. "#why-virinchi"
+        if (location.pathname === "/") {
+          const el = document.querySelector(hash);
+          if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+        } else {
+          navigate("/" + hash);
+        }
+      }
+    },
+    [location.pathname, navigate]
+  );
+
+  const isHashActive = (path: string) => {
+    if (!path.startsWith("/#")) return false;
+    return location.pathname === "/" && location.hash === path.slice(1);
+  };
 
   return (
     <>
@@ -64,21 +96,36 @@ const Navbar = () => {
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-1">
-            {navLinks.map((link) => (
-              <NavLink
-                key={link.path}
-                to={link.path}
-                className={({ isActive }) =>
-                  `px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                    isActive
+            {navLinks.map((link) =>
+              link.path.startsWith("/#") ? (
+                <a
+                  key={link.path}
+                  href={link.path}
+                  onClick={(e) => handleNavClick(e, link.path)}
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                    isHashActive(link.path)
                       ? "text-primary bg-primary/10"
                       : "text-muted-foreground hover:text-foreground"
-                  }`
-                }
-              >
-                {link.label}
-              </NavLink>
-            ))}
+                  }`}
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <NavLink
+                  key={link.path}
+                  to={link.path}
+                  className={({ isActive }) =>
+                    `px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                      isActive
+                        ? "text-primary bg-primary/10"
+                        : "text-muted-foreground hover:text-foreground"
+                    }`
+                  }
+                >
+                  {link.label}
+                </NavLink>
+              )
+            )}
           </div>
 
           {/* Right CTA */}
@@ -117,21 +164,32 @@ const Navbar = () => {
               className="md:hidden bg-background/95 backdrop-blur-md border-b border-border overflow-hidden"
             >
               <div className="px-4 py-4 space-y-2">
-                {navLinks.map((link) => (
-                  <NavLink
-                    key={link.path}
-                    to={link.path}
-                    className={({ isActive }) =>
-                      `block px-4 py-3 rounded-lg text-sm font-medium ${
-                        isActive
-                          ? "text-primary bg-primary/10"
-                          : "text-muted-foreground hover:text-foreground"
-                      }`
-                    }
-                  >
-                    {link.label}
-                  </NavLink>
-                ))}
+                {navLinks.map((link) =>
+                  link.path.startsWith("/#") ? (
+                    <a
+                      key={link.path}
+                      href={link.path}
+                      onClick={(e) => handleNavClick(e, link.path)}
+                      className="block px-4 py-3 rounded-lg text-sm font-medium text-muted-foreground hover:text-foreground"
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <NavLink
+                      key={link.path}
+                      to={link.path}
+                      className={({ isActive }) =>
+                        `block px-4 py-3 rounded-lg text-sm font-medium ${
+                          isActive
+                            ? "text-primary bg-primary/10"
+                            : "text-muted-foreground hover:text-foreground"
+                        }`
+                      }
+                    >
+                      {link.label}
+                    </NavLink>
+                  )
+                )}
                 <div className="pt-4 space-y-2 border-t border-border">
                   <button
                     onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
