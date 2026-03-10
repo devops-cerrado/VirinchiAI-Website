@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { Linkedin, Twitter, Youtube } from "lucide-react";
+import logo from "@/assets/virinchi_full_logo_bg_removed.png";
 
 const footerLinks = {
   Platform: [
