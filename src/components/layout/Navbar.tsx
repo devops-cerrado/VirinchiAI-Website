@@ -10,6 +10,7 @@ const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [showAnnouncement, setShowAnnouncement] = useState(true);
   const location = useLocation();
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 20);
