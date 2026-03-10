@@ -38,7 +38,7 @@ const Hero = () => {
       {/* Gradient mesh bg */}
       <div className="absolute inset-0">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-primary/10 blur-[120px]" />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-purple-900/20 blur-[100px]" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-accent/15 blur-[100px]" />
       </div>
 
       {/* Grid pattern */}
