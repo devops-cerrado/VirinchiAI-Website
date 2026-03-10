@@ -2,6 +2,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { ThemeProvider } from "next-themes";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Home from "./pages/Home";
@@ -18,9 +19,10 @@ const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Sonner />
-      <BrowserRouter>
+    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+      <TooltipProvider>
+        <Sonner />
+        <BrowserRouter>
         <ScrollProgress />
         <Navbar />
         <ScrollToTop />
