@@ -1,14 +1,24 @@
 
 
-## Plan: Update Virinchi Agent Studio Text
+## Plan: Add Light/Dark Mode Toggle
 
-Update `src/components/sections/AgentStudio.tsx`:
+Currently the site only has dark mode CSS variables (`:root` defines dark colors). The `next-themes` package is already installed but not used for theme switching.
 
-1. **Heading subtitle** — Change to: "No-Code for Business Users. Low-Code for Developers. No Compromises."
-2. **Quote text** — Update to reflect the No-Code/Low-Code messaging
-3. **Pillars** — Keep the three pillars as-is (Independence, Speed to Value, Scalable Intelligence) since the provided text matches the existing content
+### Changes
 
-### File: `src/components/sections/AgentStudio.tsx`
-- Update the `<h2>` heading to incorporate the No-Code / Low-Code distinction
-- Update the quote paragraph to mention "ease of No-Code for business users and Low-Code for developers"
+1. **`src/index.css`** — Add a light mode `:root` with light colors, move current dark values under `.dark`
+2. **`index.html`** — Add `class="dark"` to `<html>` so dark is default
+3. **`src/App.tsx`** — Wrap app with `<ThemeProvider>` from `next-themes` (attribute="class", defaultTheme="dark")
+4. **`src/components/layout/Navbar.tsx`** — Add a Sun/Moon toggle button in the desktop nav (right side, before Sign In) and in the mobile drawer, using `useTheme()` from `next-themes`
+
+### Light Mode Color Palette
+- Background: white/near-white (`0 0% 100%`)
+- Foreground: dark (`240 10% 10%`)
+- Card: light gray (`0 0% 97%`)
+- Border: light gray (`240 6% 90%`)
+- Muted: medium gray tones
+- Primary stays the same red (`1 76% 55%`)
+
+### Glass card & utility adjustments
+- The `glass-card` utility and section backgrounds use `bg-card/60`, `bg-background` etc. which will automatically adapt via CSS variables — no component changes needed beyond the navbar toggle.
 

@@ -23,7 +23,7 @@ const AgentStudio = () => {
         <div className="text-center mb-12">
           <span className="text-primary text-sm font-semibold tracking-wider uppercase mb-3 block">VIRINCHI AGENT STUDIO</span>
           <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground mb-4">
-            Intelligence Sovereign. No-Code. No Compromises.
+            No-Code for Business Users. Low-Code for Developers. No Compromises.
           </h2>
         </div>
 
@@ -35,7 +35,7 @@ const AgentStudio = () => {
           className="bg-card border-l-4 border-primary rounded-r-xl p-6 md:p-8 mb-16 max-w-4xl mx-auto"
         >
           <p className="text-muted-foreground italic leading-relaxed">
-            "While OpenAI focuses on the interface and Microsoft focuses on the infrastructure, Virinchi Agent Studio focuses on the Intelligence Sovereign. We provide the ease of a No-Code builder without forcing you to hand over your data or your model choice to a Big Tech gatekeeper."
+            "Virinchi Agent Studio provides the ease of No-Code for business users and Low-Code for developers — without forcing you to hand over your data or your model choice to a Big Tech gatekeeper."
           </p>
         </motion.div>
 
