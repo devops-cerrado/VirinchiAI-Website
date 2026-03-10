@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
+import logo from "@/assets/virinchi_full_logo_bg_removed.png";
 import { navLinks } from "@/constants/navLinks";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Zap, Sun, Moon } from "lucide-react";
