@@ -75,7 +75,7 @@ const Hero = () => {
         </motion.h1>
 
         <motion.p variants={item} className="text-muted-foreground text-lg md:text-xl max-w-3xl mx-auto mb-10 leading-relaxed">
-          Virinchi AI's Bolt OS is the enterprise AI agent operating system — build, orchestrate and govern AI agents across every department, domain and geography from a single control plane.
+          Virinchi AI is an enterprise-grade AI platform designed to provide organizations with a secure, scalable, and sovereign environment for integrating AI into their core operations.
         </motion.p>
 
         <motion.div variants={item} className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
