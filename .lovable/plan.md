@@ -1,18 +1,24 @@
 
 
-## Plan: Add Pricing Tab and Reorganize Content
+## Plan: Add Light/Dark Mode Toggle
+
+Currently the site only has dark mode CSS variables (`:root` defines dark colors). The `next-themes` package is already installed but not used for theme switching.
 
 ### Changes
 
-1. **`src/constants/navLinks.ts`** — Add `{ label: "Pricing", path: "/pricing" }` between Solutions and About Us.
+1. **`src/index.css`** — Add a light mode `:root` with light colors, move current dark values under `.dark`
+2. **`index.html`** — Add `class="dark"` to `<html>` so dark is default
+3. **`src/App.tsx`** — Wrap app with `<ThemeProvider>` from `next-themes` (attribute="class", defaultTheme="dark")
+4. **`src/components/layout/Navbar.tsx`** — Add a Sun/Moon toggle button in the desktop nav (right side, before Sign In) and in the mobile drawer, using `useTheme()` from `next-themes`
 
-2. **Create `src/pages/PricingPage.tsx`** — New page with the Pricing section and CTABanner.
+### Light Mode Color Palette
+- Background: white/near-white (`0 0% 100%`)
+- Foreground: dark (`240 10% 10%`)
+- Card: light gray (`0 0% 97%`)
+- Border: light gray (`240 6% 90%`)
+- Muted: medium gray tones
+- Primary stays the same red (`1 76% 55%`)
 
-3. **`src/App.tsx`** — Add route `<Route path="/pricing" element={<PricingPage />} />`.
-
-4. **`src/pages/Home.tsx`** — Remove the `<Pricing />` component (keep all other sections flowing in sequence).
-
-5. **`src/pages/SolutionsPage.tsx`** — Remove the `<Pricing />` import and component.
-
-6. **Spelling/grammar fixes** — Review all section content for typos and correct sentences across `solutionsData.ts`, `agentData.ts`, `pricingData.ts`, and section components.
+### Glass card & utility adjustments
+- The `glass-card` utility and section backgrounds use `bg-card/60`, `bg-background` etc. which will automatically adapt via CSS variables — no component changes needed beyond the navbar toggle.
 

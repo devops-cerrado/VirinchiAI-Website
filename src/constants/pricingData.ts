@@ -11,7 +11,7 @@ export const pricingData: PricingTier[] = [
   {
     name: "STARTER",
     price: 299,
-    description: "For teams getting started",
+    description: "For teams just getting started",
     features: [
       "Up to 5 agents",
       "5 data connectors",
