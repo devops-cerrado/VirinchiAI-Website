@@ -59,7 +59,7 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between h-16">
           {/* Logo */}
           <NavLink to="/" className="flex items-center gap-2">
-            <img src={logo} alt="Virinchi AI" className="h-10" />
+            <img src={logo} alt="Virinchi AI" className="h-40" />
           </NavLink>
 
           {/* Desktop Nav */}
