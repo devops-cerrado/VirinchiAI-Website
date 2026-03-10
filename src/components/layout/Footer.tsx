@@ -40,7 +40,7 @@ const Footer = () => (
         <div className="col-span-2 md:col-span-1">
           <img src={logo} alt="Virinchi AI" className="h-40 mb-4" />
           <p className="text-sm text-muted-foreground leading-relaxed">
-            Enterprise AI. Sovereign. Scalable. Secure.
+            Engineering Intelligence
           </p>
         </div>
 
