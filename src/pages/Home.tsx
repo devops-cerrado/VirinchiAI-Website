@@ -6,7 +6,6 @@ import AgentStudio from "@/components/sections/AgentStudio";
 import DataIntegration from "@/components/sections/DataIntegration";
 import Governance from "@/components/sections/Governance";
 import Solutions from "@/components/sections/Solutions";
-import Pricing from "@/components/sections/Pricing";
 import CTABanner from "@/components/sections/CTABanner";
 
 const Home = () => (
@@ -19,7 +18,6 @@ const Home = () => (
     <DataIntegration />
     <Governance />
     <Solutions />
-    <Pricing />
     <CTABanner />
   </>
 );

@@ -9,6 +9,7 @@ import Home from "./pages/Home";
 import WhyVirinchiPage from "./pages/WhyVirinchiPage";
 import PlatformPage from "./pages/PlatformPage";
 import SolutionsPage from "./pages/SolutionsPage";
+import PricingPage from "./pages/PricingPage";
 import AboutPage from "./pages/AboutPage";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
@@ -31,6 +32,7 @@ const App = () => (
           <Route path="/why-virinchi" element={<WhyVirinchiPage />} />
           <Route path="/platform" element={<PlatformPage />} />
           <Route path="/solutions" element={<SolutionsPage />} />
+          <Route path="/pricing" element={<PricingPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
