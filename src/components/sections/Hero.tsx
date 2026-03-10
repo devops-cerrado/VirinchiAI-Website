@@ -6,7 +6,7 @@ const stats = [
   { value: 50, suffix: "+", label: "PRE-BUILT AGENTS" },
   { value: 6, suffix: "", label: "INDUSTRY DOMAINS" },
   { value: 20, suffix: "+", label: "DATA CONNECTORS" },
-  { value: 4, prefix: "<", suffix: "min", label: "SELF-HEAL MTTR" },
+  { value: 1, prefix: "<", suffix: "min", label: "SELF-HEAL MTTR" },
 ];
 
 const StatCard = ({ stat, isVisible }: { stat: typeof stats[0]; isVisible: boolean }) => {
