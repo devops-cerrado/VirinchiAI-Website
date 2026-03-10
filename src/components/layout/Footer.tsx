@@ -38,12 +38,7 @@ const Footer = () => (
       <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
         {/* Brand */}
         <div className="col-span-2 md:col-span-1">
-          <div className="flex items-center gap-2 mb-4">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-heading font-bold text-sm">V</span>
-            </div>
-            <span className="font-heading font-bold text-lg text-foreground">Virinchi AI</span>
-          </div>
+          <img src={logo} alt="Virinchi AI" className="h-8 mb-4" />
           <p className="text-sm text-muted-foreground leading-relaxed">
             Enterprise AI. Sovereign. Scalable. Secure.
           </p>
