@@ -2,13 +2,15 @@ import { useState, useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { navLinks } from "@/constants/navLinks";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Zap } from "lucide-react";
+import { Menu, X, Zap, Sun, Moon } from "lucide-react";
+import { useTheme } from "next-themes";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [showAnnouncement, setShowAnnouncement] = useState(true);
   const location = useLocation();
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 20);
@@ -83,6 +85,13 @@ const Navbar = () => {
 
           {/* Right CTA */}
           <div className="hidden md:flex items-center gap-3">
+            <button
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors"
+              aria-label="Toggle theme"
+            >
+              {theme === "dark" ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            </button>
             <button className="text-sm text-muted-foreground hover:text-foreground transition-colors px-4 py-2">
               Sign In
             </button>
@@ -126,6 +135,13 @@ const Navbar = () => {
                   </NavLink>
                 ))}
                 <div className="pt-4 space-y-2 border-t border-border">
+                  <button
+                    onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                    className="flex items-center gap-2 w-full text-left px-4 py-3 text-sm text-muted-foreground hover:text-foreground"
+                  >
+                    {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+                    {theme === "dark" ? "Light Mode" : "Dark Mode"}
+                  </button>
                   <button className="block w-full text-left px-4 py-3 text-sm text-muted-foreground">
                     Sign In
                   </button>
