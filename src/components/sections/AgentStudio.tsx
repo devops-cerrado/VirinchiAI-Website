@@ -23,7 +23,7 @@ const AgentStudio = () => {
         <div className="text-center mb-12">
           <span className="text-primary text-sm font-semibold tracking-wider uppercase mb-3 block">VIRINCHI AGENT STUDIO</span>
           <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground mb-4">
-            Intelligence Sovereign. No-Code. No Compromises.
+            No-Code for Business Users. Low-Code for Developers. No Compromises.
           </h2>
         </div>
 
