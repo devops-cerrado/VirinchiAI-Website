@@ -87,8 +87,8 @@ html {
   .glass-card {
     @apply bg-card/60 backdrop-blur-md border border-white/10 rounded-xl;
   }
-  .gradient-text-red {
-    @apply bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(1,90%,70%)] bg-clip-text text-transparent;
+  .gradient-text-brand {
+    @apply bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(280,80%,70%)] bg-clip-text text-transparent;
   }
   .section-padding {
     @apply py-20 md:py-[120px] px-4 md:px-8;
