@@ -71,7 +71,7 @@ const Hero = () => {
         className="relative z-10 max-w-5xl mx-auto text-center px-4 pt-32 pb-20"
       >
         <motion.h1 variants={item} className="font-heading text-4xl sm:text-5xl md:text-7xl font-bold text-foreground leading-[1.1] mb-6">
-          Build Your <span className="gradient-text-red">Digital Workforce</span> in Days, Not Months
+          Build Your <span className="gradient-text-brand">Digital Workforce</span> in Days, Not Months
         </motion.h1>
 
         <motion.p variants={item} className="text-muted-foreground text-lg md:text-xl max-w-3xl mx-auto mb-10 leading-relaxed">

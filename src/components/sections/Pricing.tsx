@@ -41,7 +41,7 @@ const Pricing = () => {
               transition={{ delay: i * 0.15 }}
               className={`bg-card border rounded-xl p-8 relative transition-transform hover:scale-[1.02] ${
                 tier.popular
-                  ? "border-primary glow-red scale-[1.02] md:scale-105"
+                  ? "border-primary glow-brand scale-[1.02] md:scale-105"
                   : "border-border"
               }`}
             >
