@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 const CTABanner = () => (
-  <section className="relative overflow-hidden" style={{ background: "linear-gradient(135deg, hsl(1 76% 55%), hsl(1 76% 35%))" }}>
+  <section className="relative overflow-hidden" style={{ background: "linear-gradient(135deg, hsl(270 70% 55%), hsl(270 70% 35%))" }}>
     {/* Dot pattern */}
     <div className="absolute inset-0 opacity-10" style={{
       backgroundImage: "radial-gradient(circle, hsl(0 0% 100%) 1px, transparent 1px)",

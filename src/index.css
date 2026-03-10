@@ -93,7 +93,7 @@ html {
   .section-padding {
     @apply py-20 md:py-[120px] px-4 md:px-8;
   }
-  .glow-red {
+  .glow-brand {
     box-shadow: 0 0 40px hsl(var(--primary) / 0.3);
   }
 }
