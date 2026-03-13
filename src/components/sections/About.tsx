@@ -64,9 +64,19 @@ const About = () => (
         <div className="bg-card border border-border rounded-xl p-8">
           <Globe className="w-8 h-8 text-primary mb-4" />
           <h3 className="font-heading font-bold text-xl text-foreground mb-3">Global Presence</h3>
-          <p className="text-muted-foreground leading-relaxed">
-            Headquartered in the US with offices in India.
+          <p className="text-muted-foreground leading-relaxed mb-4">
+            Incorporated in Delaware, USA (Virinchi AI Inc) with R&amp;D and engineering operations in Hyderabad, India (Virinchi AI Pvt Ltd).
           </p>
+          <div className="space-y-2 text-sm">
+            <div className="flex items-start gap-2 text-muted-foreground">
+              <span className="text-base leading-none mt-0.5">🇺🇸</span>
+              <span>Delaware, USA — Parent entity</span>
+            </div>
+            <div className="flex items-start gap-2 text-muted-foreground">
+              <span className="text-base leading-none mt-0.5">🇮🇳</span>
+              <span>Gachibowli, Hyderabad, India — R&amp;D &amp; Engineering</span>
+            </div>
+          </div>
         </div>
       </div>
 

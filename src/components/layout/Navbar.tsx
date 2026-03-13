@@ -80,16 +80,16 @@ const Navbar = () => {
       </AnimatePresence>
 
       <nav
-        className={`fixed left-0 right-0 z-50 transition-all duration-300 ${showAnnouncement ? "top-[36px]" : "top-0"
+        className={`fixed left-0 right-0 z-50 transition-all duration-300 ${showAnnouncement ? "top-[38px]" : "top-0"
           } ${scrolled
             ? "bg-background/80 backdrop-blur-md border-b border-border"
             : "bg-transparent"
           }`}
       >
-        <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between h-12">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between h-16">
           {/* Logo */}
           <NavLink to="/" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="flex items-center gap-2">
-            <img src={logo} alt="Virinchi AI" className="h-12 w-auto" />
+            <img src={logo} alt="Virinchi AI" className="h-14 w-auto" />
           </NavLink>
 
           {/* Desktop Nav */}
