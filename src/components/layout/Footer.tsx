@@ -18,11 +18,11 @@ const footerLinks = {
     { label: "Virinchi Finance", path: "/#solutions" },
   ],
   Company: [
-    { label: "Why Virinchi AI", path: "/why-virinchi" },
-    { label: "About Us", path: "/about" },
-    { label: "Careers", path: "/about" },
-    { label: "Blog", path: "/about" },
-    { label: "Contact", path: "/about" },
+    { label: "Why Virinchi AI", path: "/#why-virinchi" },
+    { label: "About Us", path: "/#about" },
+    // { label: "Careers", path: "/about" },
+    // { label: "Blog", path: "/about" },
+    // { label: "Contact", path: "/about" },
   ],
   // Legal: [
   //   { label: "Privacy Policy", path: "#" },
