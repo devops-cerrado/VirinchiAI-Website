@@ -116,6 +116,7 @@ const Navbar = () => {
                 <NavLink
                   key={link.path}
                   to={link.path}
+                  onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                   className={({ isActive }) =>
                     `px-4 py-2 rounded-lg text-sm font-medium transition-colors ${isActive
                       ? "text-primary bg-primary/10"
@@ -138,9 +139,9 @@ const Navbar = () => {
             >
               {theme === "dark" ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
             </button>
-            <button className="bg-primary text-primary-foreground px-5 py-2.5 rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity">
+            <NavLink to="/request-demo" className="bg-primary text-primary-foreground px-5 py-2.5 rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity">
               Request Demo
-            </button>
+            </NavLink>
           </div>
 
           {/* Mobile Toggle */}
@@ -167,7 +168,15 @@ const Navbar = () => {
                     <a
                       key={link.path}
                       href={link.path}
-                      onClick={(e) => handleNavClick(e, link.path)}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setMobileOpen(false);
+                        const hash = link.path.slice(1);
+                        setTimeout(() => {
+                          document.querySelector(hash)?.scrollIntoView({ behavior: "smooth", block: "start" });
+                          history.replaceState(null, "", "/");
+                        }, 350);
+                      }}
                       className="block px-4 py-3 rounded-lg text-sm font-medium text-muted-foreground hover:text-foreground"
                     >
                       {link.label}
@@ -176,6 +185,7 @@ const Navbar = () => {
                     <NavLink
                       key={link.path}
                       to={link.path}
+                      onClick={() => { setMobileOpen(false); window.scrollTo({ top: 0, behavior: "smooth" }); }}
                       className={({ isActive }) =>
                         `block px-4 py-3 rounded-lg text-sm font-medium ${isActive
                           ? "text-primary bg-primary/10"
@@ -195,9 +205,9 @@ const Navbar = () => {
                     {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
                     {theme === "dark" ? "Light Mode" : "Dark Mode"}
                   </button>
-                  <button className="block w-full bg-primary text-primary-foreground px-4 py-3 rounded-lg text-sm font-semibold">
+                  <NavLink to="/request-demo" onClick={() => setMobileOpen(false)} className="block w-full bg-primary text-primary-foreground px-4 py-3 rounded-lg text-sm font-semibold text-center">
                     Request Demo
-                  </button>
+                  </NavLink>
                 </div>
               </div>
             </motion.div>

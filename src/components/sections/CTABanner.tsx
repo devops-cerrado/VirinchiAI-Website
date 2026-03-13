@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const CTABanner = () => (
   <section className="relative overflow-hidden" style={{ background: "linear-gradient(135deg, hsl(185 55% 45%), hsl(268 45% 48%))" }}>
@@ -20,9 +21,9 @@ const CTABanner = () => (
         Join leading enterprises already running on Virinchi AI
       </p>
       <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <button className="bg-foreground text-background px-8 py-3.5 rounded-lg font-semibold text-sm hover:opacity-90 transition-opacity">
+        <Link to="/request-demo" className="bg-foreground text-background px-8 py-3.5 rounded-lg font-semibold text-sm hover:opacity-90 transition-opacity">
           Request Demo
-        </button>
+        </Link>
         <button className="border-2 border-primary-foreground text-primary-foreground px-8 py-3.5 rounded-lg font-semibold text-sm hover:bg-primary-foreground/10 transition-colors">
           Watch 3-Min Demo →
         </button>

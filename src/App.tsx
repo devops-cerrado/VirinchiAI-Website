@@ -7,6 +7,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Home from "./pages/Home";
 import PricingPage from "./pages/PricingPage";
+import RequestDemo from "./pages/RequestDemo";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 import ScrollProgress from "./components/ScrollProgress";
@@ -25,6 +26,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/pricing" element={<PricingPage />} />
+          <Route path="/request-demo" element={<RequestDemo />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />

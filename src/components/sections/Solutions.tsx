@@ -1,4 +1,4 @@
-import { useState, useRef, useCallback } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ArrowLeft, Play } from "lucide-react";
 import { solutions, industries, type Solution } from "@/constants/solutionsData";
@@ -73,11 +73,13 @@ const SolutionDetail = ({ solution, onBack }: { solution: Solution; onBack: () =
 
 const Solutions = () => {
   const [selected, setSelected] = useState<Solution | null>(null);
-  const [gridHeight, setGridHeight] = useState<number | undefined>(undefined);
 
-  const gridRef = useCallback((node: HTMLDivElement | null) => {
-    if (node) setGridHeight(node.offsetHeight);
-  }, []);
+  const selectSolution = (s: Solution | null) => {
+    setSelected(s);
+    setTimeout(() => {
+      document.getElementById("solutions")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 50);
+  };
 
   return (
   <section id="solutions" className="section-padding bg-background">
@@ -93,18 +95,14 @@ const Solutions = () => {
         </p>
       </div>
 
-      <div
-        className="relative mb-20 flex items-center"
-        style={{ minHeight: gridHeight }}
-      >
+      <div className="relative mb-20">
       <AnimatePresence mode="wait">
         {selected ? (
-          <SolutionDetail key="detail" solution={selected} onBack={() => setSelected(null)} />
+          <SolutionDetail key="detail" solution={selected} onBack={() => selectSolution(null)} />
         ) : (
           <motion.div
             key="grid"
-            ref={gridRef}
-            initial={{ opacity: 0, x: -40 }}
+initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -40 }}
             transition={{ duration: 0.3 }}
@@ -121,7 +119,7 @@ const Solutions = () => {
                   <h3 className="font-heading font-bold text-lg text-foreground mb-2">{s.name}</h3>
                   <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{s.description}</p>
                   <button
-                    onClick={() => setSelected(s)}
+                    onClick={() => selectSolution(s)}
                     className="flex items-center gap-1 text-primary text-sm font-semibold group-hover:gap-2 transition-all"
                   >
                     Learn More <ArrowRight className="w-4 h-4" />
