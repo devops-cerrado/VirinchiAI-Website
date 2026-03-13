@@ -21,7 +21,7 @@ const CTABanner = () => (
       </p>
       <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
         <button className="bg-foreground text-background px-8 py-3.5 rounded-lg font-semibold text-sm hover:opacity-90 transition-opacity">
-          Request Demo Access
+          Request Demo
         </button>
         <button className="border-2 border-primary-foreground text-primary-foreground px-8 py-3.5 rounded-lg font-semibold text-sm hover:bg-primary-foreground/10 transition-colors">
           Watch 3-Min Demo →

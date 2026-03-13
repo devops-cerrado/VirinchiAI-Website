@@ -53,6 +53,13 @@ const offices = [
 
 const categoryCount = Object.keys(footerLinks).length; // brand col + N category cols + offices col
 
+const scrollTo = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
+  e.preventDefault();
+  const id = path.replace("/#", "");
+  document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+  history.replaceState(null, "", "/");
+};
+
 const Footer = () => (
   <footer className="bg-background border-t border-border">
     <div className="max-w-7xl mx-auto px-4 md:px-8 py-16">
@@ -77,6 +84,7 @@ const Footer = () => (
                   {link.path.startsWith("/#") ? (
                     <a
                       href={link.path}
+                      onClick={(e) => scrollTo(e, link.path)}
                       className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                     >
                       {link.label}

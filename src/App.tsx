@@ -9,7 +9,6 @@ import Home from "./pages/Home";
 import PricingPage from "./pages/PricingPage";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
-import FloatingDemo from "./components/FloatingDemo";
 import ScrollProgress from "./components/ScrollProgress";
 
 const queryClient = new QueryClient();
@@ -29,7 +28,6 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
-        <FloatingDemo />
       </BrowserRouter>
       </TooltipProvider>
     </ThemeProvider>

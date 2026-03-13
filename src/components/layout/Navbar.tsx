@@ -42,8 +42,13 @@ const Navbar = () => {
         if (location.pathname === "/") {
           const el = document.querySelector(hash);
           if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+          history.replaceState(null, "", "/");
         } else {
-          navigate("/" + hash);
+          navigate("/");
+          setTimeout(() => {
+            document.querySelector(hash)?.scrollIntoView({ behavior: "smooth", block: "start" });
+            history.replaceState(null, "", "/");
+          }, 100);
         }
       }
     },
@@ -134,7 +139,7 @@ const Navbar = () => {
               {theme === "dark" ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
             </button>
             <button className="bg-primary text-primary-foreground px-5 py-2.5 rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity">
-              Request Demo Access
+              Request Demo
             </button>
           </div>
 
@@ -191,7 +196,7 @@ const Navbar = () => {
                     {theme === "dark" ? "Light Mode" : "Dark Mode"}
                   </button>
                   <button className="block w-full bg-primary text-primary-foreground px-4 py-3 rounded-lg text-sm font-semibold">
-                    Request Demo Access
+                    Request Demo
                   </button>
                 </div>
               </div>
