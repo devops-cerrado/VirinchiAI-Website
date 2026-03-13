@@ -80,18 +80,16 @@ const Navbar = () => {
       </AnimatePresence>
 
       <nav
-        className={`fixed left-0 right-0 z-50 transition-all duration-300 ${
-          showAnnouncement ? "top-[36px]" : "top-0"
-        } ${
-          scrolled
+        className={`fixed left-0 right-0 z-50 transition-all duration-300 ${showAnnouncement ? "top-[36px]" : "top-0"
+          } ${scrolled
             ? "bg-background/80 backdrop-blur-md border-b border-border"
             : "bg-transparent"
-        }`}
+          }`}
       >
-        <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between h-16">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between h-12">
           {/* Logo */}
           <NavLink to="/" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="flex items-center gap-2">
-            <img src={logo} alt="Virinchi AI" className="h-40" />
+            <img src={logo} alt="Virinchi AI" className="h-12 w-auto" />
           </NavLink>
 
           {/* Desktop Nav */}
@@ -102,11 +100,10 @@ const Navbar = () => {
                   key={link.path}
                   href={link.path}
                   onClick={(e) => handleNavClick(e, link.path)}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                    isHashActive(link.path)
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${isHashActive(link.path)
                       ? "text-primary bg-primary/10"
                       : "text-muted-foreground hover:text-foreground"
-                  }`}
+                    }`}
                 >
                   {link.label}
                 </a>
@@ -115,10 +112,9 @@ const Navbar = () => {
                   key={link.path}
                   to={link.path}
                   className={({ isActive }) =>
-                    `px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                      isActive
-                        ? "text-primary bg-primary/10"
-                        : "text-muted-foreground hover:text-foreground"
+                    `px-4 py-2 rounded-lg text-sm font-medium transition-colors ${isActive
+                      ? "text-primary bg-primary/10"
+                      : "text-muted-foreground hover:text-foreground"
                     }`
                   }
                 >
@@ -137,11 +133,8 @@ const Navbar = () => {
             >
               {theme === "dark" ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
             </button>
-            <button className="text-sm text-muted-foreground hover:text-foreground transition-colors px-4 py-2">
-              Sign In
-            </button>
             <button className="bg-primary text-primary-foreground px-5 py-2.5 rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity">
-              Request Demo
+              Request Demo Access
             </button>
           </div>
 
@@ -179,10 +172,9 @@ const Navbar = () => {
                       key={link.path}
                       to={link.path}
                       className={({ isActive }) =>
-                        `block px-4 py-3 rounded-lg text-sm font-medium ${
-                          isActive
-                            ? "text-primary bg-primary/10"
-                            : "text-muted-foreground hover:text-foreground"
+                        `block px-4 py-3 rounded-lg text-sm font-medium ${isActive
+                          ? "text-primary bg-primary/10"
+                          : "text-muted-foreground hover:text-foreground"
                         }`
                       }
                     >
@@ -198,11 +190,8 @@ const Navbar = () => {
                     {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
                     {theme === "dark" ? "Light Mode" : "Dark Mode"}
                   </button>
-                  <button className="block w-full text-left px-4 py-3 text-sm text-muted-foreground">
-                    Sign In
-                  </button>
                   <button className="block w-full bg-primary text-primary-foreground px-4 py-3 rounded-lg text-sm font-semibold">
-                    Request Demo
+                    Request Demo Access
                   </button>
                 </div>
               </div>

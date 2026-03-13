@@ -8,14 +8,14 @@ const footerLinks = {
     { label: "Agent Studio", path: "/platform" },
     { label: "App Builder", path: "/platform" },
     { label: "Control Tower", path: "/platform" },
-    { label: "Pricing", path: "/platform" },
+    // { label: "Pricing", path: "/platform" },
   ],
   Solutions: [
-    { label: "Virinchi PA", path: "/solutions" },
-    { label: "Virinchi HR", path: "/solutions" },
-    { label: "Virinchi OCR", path: "/solutions" },
-    { label: "Virinchi CSM", path: "/solutions" },
-    { label: "Virinchi Finance", path: "/solutions" },
+    { label: "Virinchi PA", path: "/#solutions" },
+    { label: "Virinchi HR", path: "/#solutions" },
+    { label: "Virinchi OCR", path: "/#solutions" },
+    { label: "Virinchi CSM", path: "/#solutions" },
+    { label: "Virinchi Finance", path: "/#solutions" },
   ],
   Company: [
     { label: "Why Virinchi AI", path: "/why-virinchi" },
@@ -24,21 +24,26 @@ const footerLinks = {
     { label: "Blog", path: "/about" },
     { label: "Contact", path: "/about" },
   ],
-  Legal: [
-    { label: "Privacy Policy", path: "#" },
-    { label: "Terms of Service", path: "#" },
-    { label: "Security", path: "#" },
-    { label: "Cookie Policy", path: "#" },
-  ],
+  // Legal: [
+  //   { label: "Privacy Policy", path: "#" },
+  //   { label: "Terms of Service", path: "#" },
+  //   { label: "Security", path: "#" },
+  //   { label: "Cookie Policy", path: "#" },
+  // ],
 };
+
+const categoryCount = Object.keys(footerLinks).length; // brand col + N category cols
 
 const Footer = () => (
   <footer className="bg-background border-t border-border">
     <div className="max-w-7xl mx-auto px-4 md:px-8 py-16">
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
+      <div
+        className="grid grid-cols-2 gap-8"
+        style={{ gridTemplateColumns: `repeat(${1 + categoryCount}, minmax(0, 1fr))` }}
+      >
         {/* Brand */}
-        <div className="col-span-2 md:col-span-1">
-          <img src={logo} alt="Virinchi AI" className="h-40 mb-4" />
+        <div>
+          <img src={logo} alt="Virinchi AI" className="h-10 w-auto mb-4" />
           <p className="text-sm text-muted-foreground leading-relaxed">
             Engineering Intelligence
           </p>
@@ -50,12 +55,21 @@ const Footer = () => (
             <ul className="space-y-3">
               {links.map((link) => (
                 <li key={link.label}>
-                  <NavLink
-                    to={link.path}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    {link.label}
-                  </NavLink>
+                  {link.path.startsWith("/#") ? (
+                    <a
+                      href={link.path}
+                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <NavLink
+                      to={link.path}
+                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                      {link.label}
+                    </NavLink>
+                  )}
                 </li>
               ))}
             </ul>

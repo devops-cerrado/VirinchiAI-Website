@@ -5,7 +5,7 @@ const reasons = [
   { icon: Shield, title: "Intelligence Sovereign", desc: "Your data stays yours. No vendor lock-in, no Big Tech gatekeeping." },
   { icon: Zap, title: "Days, Not Months", desc: "Go from concept to production AI agents in days with pre-built templates." },
   { icon: Globe, title: "Global Scale", desc: "Deploy across geographies with multi-region, multi-language support." },
-  { icon: Award, title: "Enterprise Grade", desc: "SOC 2, HIPAA-ready with built-in compliance and governance frameworks." },
+  { icon: Award, title: "Enterprise Grade", desc: "Built with enterprise security principles — audit logging, role-based access, and compliance-ready architecture." },
   { icon: Users, title: "50+ Pre-Built Agents", desc: "Purpose-built agents across six industry domains, ready to deploy." },
   { icon: TrendingUp, title: "Proven ROI", desc: "Customers see a 60% reduction in processing time within 30 days." },
 ];

@@ -80,7 +80,7 @@ const Hero = () => {
 
         <motion.div variants={item} className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
           <button className="bg-primary text-primary-foreground px-8 py-3.5 rounded-lg font-semibold text-sm hover:opacity-90 transition-opacity w-full sm:w-auto">
-            Start Free Trial
+            Request Demo Access
           </button>
           <button className="border border-border text-foreground px-8 py-3.5 rounded-lg font-semibold text-sm hover:bg-secondary transition-colors w-full sm:w-auto">
             Watch 3-Min Demo →
