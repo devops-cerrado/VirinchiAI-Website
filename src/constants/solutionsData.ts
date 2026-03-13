@@ -18,19 +18,17 @@ export const solutions: Solution[] = [
   },
   {
     name: "Virinchi HR",
-    description: "Intelligent automation for the modern workforce lifecycle.",
+    description: "Agentic AI that orchestrates your entire hiring workflow.",
     detail: [
-      "Welcome to Virinchi HR. Powered by Agentic AI, our platform doesn't just host your JD — it orchestrates your entire recruitment strategy.",
-      "Forget manual posting. Virinchi's custom agents autonomously crawl job portals, internal databases, and social networks to find the exact talent you need.",
+      "Powered by Agentic AI, Virinchi HR orchestrates your entire recruitment strategy. Our agents autonomously source talent across job portals, internal databases, and social networks — so you hire smarter, faster.",
     ],
     icon: Users,
   },
   {
     name: "Virinchi OCR",
-    description: "High-precision data extraction for complex document digitization.",
+    description: "Turn any document into structured, verified data instantly.",
     detail: [
-      "The bridge between static documents and instant action. We don't just \"read\" text; we transform it into a seamless Document-to-Action workflow. Accuracy is our priority — every piece of extracted data is linked back to its exact coordinates on the original file.",
-      "If the AI is ever unsure, it intelligently highlights the specific box for instant human verification — ensuring 100% data integrity every time.",
+      "We transform documents into a seamless Document-to-Action workflow, linking every extracted value back to its exact source coordinates. When confidence is low, the AI flags the field for instant human verification — ensuring 100% data integrity.",
     ],
     icon: FileSearch,
   },

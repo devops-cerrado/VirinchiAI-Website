@@ -1,7 +1,6 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, ArrowLeft, Play } from "lucide-react";
-import { solutions, industries, type Solution } from "@/constants/solutionsData";
+import { motion } from "framer-motion";
+import { Play } from "lucide-react";
+import { solutions, industries } from "@/constants/solutionsData";
 
 const videos = [
   { title: "Virinchi Predictive Analytics",             videoId: "y1qqm24aNog" },
@@ -37,50 +36,7 @@ const YoutubeEmbed = ({ title, videoId }: { title: string; videoId: string }) =>
   </div>
 );
 
-const SolutionDetail = ({ solution, onBack }: { solution: Solution; onBack: () => void }) => {
-  const Icon = solution.icon;
-  return (
-    <motion.div
-      key="detail"
-      initial={{ opacity: 0, x: 40 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: 40 }}
-      transition={{ duration: 0.3 }}
-      className="w-full"
-    >
-      <button
-        onClick={onBack}
-        className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-8"
-      >
-        <ArrowLeft className="w-4 h-4" /> Back to Solutions
-      </button>
-      <div className="bg-card border border-border rounded-2xl p-10 max-w-3xl mx-auto">
-        <div className="flex items-center gap-4 mb-6">
-          <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-            <Icon className="w-6 h-6 text-primary" />
-          </div>
-          <h3 className="font-heading text-2xl font-bold text-foreground">{solution.name}</h3>
-        </div>
-        <div className="space-y-4">
-          {solution.detail.map((para, i) => (
-            <p key={i} className="text-muted-foreground leading-relaxed text-base">{para}</p>
-          ))}
-        </div>
-      </div>
-    </motion.div>
-  );
-};
-
 const Solutions = () => {
-  const [selected, setSelected] = useState<Solution | null>(null);
-
-  const selectSolution = (s: Solution | null) => {
-    setSelected(s);
-    setTimeout(() => {
-      document.getElementById("solutions")?.scrollIntoView({ behavior: "smooth", block: "start" });
-    }, 50);
-  };
-
   return (
   <section id="solutions" className="section-padding bg-background">
     <div className="max-w-7xl mx-auto">
@@ -96,40 +52,37 @@ const Solutions = () => {
       </div>
 
       <div className="relative mb-20">
-      <AnimatePresence mode="wait">
-        {selected ? (
-          <SolutionDetail key="detail" solution={selected} onBack={() => selectSolution(null)} />
-        ) : (
-          <motion.div
-            key="grid"
-initial={{ opacity: 0, x: -40 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -40 }}
-            transition={{ duration: 0.3 }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full"
-          >
-            {solutions.map((s) => {
-              const Icon = s.icon;
-              return (
-                <div
-                  key={s.name}
-                  className="bg-card border border-border rounded-xl p-8 hover:border-primary/30 transition-colors group"
-                >
-                  <Icon className="w-8 h-8 text-primary mb-4" />
-                  <h3 className="font-heading font-bold text-lg text-foreground mb-2">{s.name}</h3>
-                  <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{s.description}</p>
-                  <button
-                    onClick={() => selectSolution(s)}
-                    className="flex items-center gap-1 text-primary text-sm font-semibold group-hover:gap-2 transition-all"
-                  >
-                    Learn More <ArrowRight className="w-4 h-4" />
-                  </button>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full"
+        >
+          {solutions.map((s) => {
+            const Icon = s.icon;
+            return (
+              <div key={s.name} className="group [perspective:1000px] h-48">
+                <div className="relative w-full h-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                  {/* Front */}
+                  <div className="absolute inset-0 bg-card border border-border rounded-xl p-6 [backface-visibility:hidden] flex flex-col">
+                    <Icon className="w-7 h-7 text-primary mb-3 shrink-0" />
+                    <h3 className="font-heading font-bold text-base text-foreground mb-2 leading-tight">{s.name}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed line-clamp-4">{s.description}</p>
+                  </div>
+                  {/* Back */}
+                  <div className="absolute inset-0 bg-primary/5 border border-primary/30 rounded-xl p-6 [backface-visibility:hidden] [transform:rotateY(180deg)] flex flex-col">
+                    <h3 className="font-heading font-bold text-base text-foreground mb-2 leading-tight shrink-0">{s.name}</h3>
+                    <div className="overflow-y-auto flex-1 space-y-2 pr-1">
+                      {s.detail.map((para, i) => (
+                        <p key={i} className="text-xs text-muted-foreground leading-relaxed">{para}</p>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-              );
-            })}
-          </motion.div>
-        )}
-      </AnimatePresence>
+              </div>
+            );
+          })}
+        </motion.div>
       </div>
 
       {/* Industries */}
