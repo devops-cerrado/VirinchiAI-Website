@@ -3,8 +3,8 @@ import { ArrowRight, Play } from "lucide-react";
 import { solutions, industries } from "@/constants/solutionsData";
 
 const videos = [
-  { title: "Virinchi AI — Platform Overview", videoId: "kCc8FmEb1nY" },
-  { title: "Customer Success Story",          videoId: "aircAruvnKk" },
+  { title: "Virinchi Predictive Analytics",             videoId: "y1qqm24aNog" },
+  { title: "Virinchi Finance — Balance Sheet Commentary", videoId: "wfeCkFLmwRY" },
 ];
 
 const YoutubeEmbed = ({ title, videoId }: { title: string; videoId: string }) => (
