@@ -6,13 +6,22 @@ const founder = {
   name: "Srikanth Porika",
   designation: "Founder & CEO",
   linkedin: "https://www.linkedin.com/in/porikasrikanth",
+  bio: "Award-winning business leader with 20+ years driving digital transformations at Kyndryl and IBM. Executive MBA from ISB, with specializations from Wharton (M&A) and LBS (Business Model Innovation). Founder & CEO of Cerrado Consulting Services. Visiting Professor at Mahindra University Hyderabad and NIT Warangal.",
 };
 
-const teamPlaceholders = [
-  { designation: "Chief Technology Officer"  },
-  { designation: "VP of Engineering"         },
-  { designation: "Head of Product"           },
-  { designation: "Head of Customer Success"  },
+const teamMembers = [
+  {
+    name: "Jyothirmai Khethavath",
+    designation: "Vice President, Program Management",
+    linkedin: "https://www.linkedin.com/in/jyothirmai-k-3850bb28",
+    bio: "Technology leader with 14+ years in product ownership, software engineering, and enterprise program leadership. MBA from San Francisco Bay University with Executive Education in Product Management from ISB. Leads strategic AI and enterprise technology initiatives at Virinchi AI.",
+  },
+  {
+    name: "Purushotham P",
+    designation: "Product Architect",
+    linkedin: "#",
+    bio: "Product architect with 10+ years of experience in full-stack development, cloud-native architectures, and enterprise platform design. Drives end-to-end product engineering at Virinchi AI, translating complex business requirements into scalable, production-ready solutions.",
+  },
 ];
 
 const stats = [
@@ -91,7 +100,7 @@ const About = () => (
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="bg-card border border-primary/30 rounded-2xl p-8 mb-6 flex flex-col sm:flex-row items-center sm:items-start gap-6 max-w-lg mx-auto"
+        className="bg-card border border-primary/30 rounded-2xl p-8 mb-6 flex flex-col sm:flex-row items-center sm:items-start gap-6 max-w-2xl mx-auto"
       >
         <img
           src={srikanthPhoto}
@@ -100,32 +109,54 @@ const About = () => (
         />
         <div className="text-center sm:text-left">
           <p className="font-heading text-xl font-bold text-foreground">{founder.name}</p>
-          <p className="text-sm text-primary font-medium mt-0.5">{founder.designation}</p>
-          <a
-            href={founder.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 mt-3 text-xs text-muted-foreground hover:text-primary transition-colors border border-border hover:border-primary/40 rounded-lg px-3 py-1.5"
-          >
-            <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            LinkedIn
-          </a>
+          <p className="text-sm text-primary font-medium mt-0.5 inline-flex items-center gap-2">
+            {founder.designation}
+            <a
+              href={founder.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-primary transition-colors"
+            >
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+          </p>
+          <p className="text-xs text-muted-foreground mt-2 leading-relaxed">{founder.bio}</p>
         </div>
       </motion.div>
 
-      {/* Placeholder team members */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-        {teamPlaceholders.map((member, i) => (
+      {/* Team members */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
+        {teamMembers.map((member, i) => (
           <motion.div
-            key={member.designation}
+            key={member.name}
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.08 }}
-            className="bg-card border border-dashed border-border rounded-xl p-5 text-center flex flex-col items-center gap-2 opacity-50"
+            className="bg-card border border-border rounded-xl p-6 text-center flex flex-col items-center gap-3"
           >
-            <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-muted-foreground text-lg">?</div>
-            <p className="text-xs text-muted-foreground leading-tight">{member.designation}</p>
+            <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xl font-bold">
+              {member.name.charAt(0)}
+            </div>
+            <div>
+              <p className="font-heading text-base font-bold text-foreground">{member.name}</p>
+              <p className="text-sm text-primary font-medium mt-0.5 inline-flex items-center gap-2">
+                {member.designation}
+                {member.linkedin && (
+                  <a
+                    href={member.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                  </a>
+                )}
+              </p>
+              {member.bio && (
+                <p className="text-xs text-muted-foreground mt-2 leading-relaxed">{member.bio}</p>
+              )}
+            </div>
           </motion.div>
         ))}
       </div>
