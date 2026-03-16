@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import { FileText, Database, Cloud, CheckCircle2 } from "lucide-react";
+import { FileText, Database, Cloud, CheckCircle2, Headset, Users, DollarSign, Zap, Bot } from "lucide-react";
 
 const pillars = [
   { num: "01", title: "Independence", desc: "Built on a standalone stack, giving you a unique, high-performance alternative to traditional frameworks." },
@@ -108,10 +108,10 @@ const DevPanel = ({ stepIdx, animKey }: { stepIdx: number; animKey: string }) =>
 // ── Business User: Visual panels ──────────────────────────────
 
 const templates = [
-  { label: "Customer Support", emoji: "🤝", active: true },
-  { label: "HR Assistant", emoji: "👥", active: false },
-  { label: "Finance Agent", emoji: "💰", active: false },
-  { label: "+ Custom", emoji: "⚡", active: false },
+  { label: "Customer Support", icon: Headset, active: true },
+  { label: "HR Assistant", icon: Users, active: false },
+  { label: "Finance Agent", icon: DollarSign, active: false },
+  { label: "+ Custom", icon: Zap, active: false },
 ];
 
 const models = [
@@ -148,7 +148,7 @@ const BizStep1 = ({ animKey }: { animKey: string }) => (
             : "border-border bg-card"
             }`}
         >
-          <span className="text-lg">{t.emoji}</span>
+          <t.icon className={`w-4 h-4 shrink-0 ${t.active ? "text-primary" : "text-muted-foreground"}`} />
           <span className={`text-xs font-medium ${t.active ? "text-primary" : "text-muted-foreground"}`}>{t.label}</span>
           {t.active && <CheckCircle2 className="w-3.5 h-3.5 text-primary ml-auto shrink-0" />}
         </motion.div>
@@ -228,7 +228,7 @@ const BizStep3 = ({ animKey }: { animKey: string }) => (
         transition={{ delay: 0.85, duration: 0.3 }}
         className="bg-primary/10 border-2 border-primary/40 rounded-2xl px-6 py-5 text-center"
       >
-        <div className="text-2xl mb-1">🤖</div>
+        <Bot className="w-6 h-6 text-primary mx-auto mb-1" />
         <div className="text-xs font-semibold text-primary">Agent</div>
       </motion.div>
     </div>

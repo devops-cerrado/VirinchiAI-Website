@@ -26,12 +26,12 @@ const Platform = () => (
   <section id="platform" className="section-padding bg-secondary/30">
     <div className="max-w-7xl mx-auto">
       <div className="text-center mb-16">
-        <span className="text-primary text-sm font-semibold tracking-wider uppercase mb-3 block">PLATFORM</span>
+        <span className="text-primary text-sm font-semibold tracking-wider uppercase mb-3 block">VIRINCHI AGENT STUDIO - PLATFORM</span>
         <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground mb-4">
           Build Complex Enterprise Apps in Days
         </h2>
         <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-          Beyond simple chatbots — Bolt OS enables organizations to build full-featured AI applications delivered in days.
+          Beyond Agents — Agent Studio enables organizations to build full-featured AI applications delivered in Days.
         </p>
       </div>
 
