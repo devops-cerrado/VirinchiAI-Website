@@ -70,7 +70,7 @@ const Solutions = () => {
                     <p className="text-sm text-muted-foreground leading-relaxed line-clamp-4">{s.description}</p>
                   </div>
                   {/* Back */}
-                  <div className="absolute inset-0 bg-primary/5 border border-primary/30 rounded-xl p-6 [backface-visibility:hidden] [transform:rotateY(180deg)] flex flex-col">
+                  <div className="absolute inset-0 bg-primary/35 border border-primary/60 rounded-xl p-6 [backface-visibility:hidden] [transform:rotateY(180deg)] flex flex-col">
                     <h3 className="font-heading font-bold text-base text-foreground mb-2 leading-tight shrink-0">{s.name}</h3>
                     <div className="overflow-y-auto flex-1 space-y-2 pr-1">
                       {s.detail.map((para, i) => (
