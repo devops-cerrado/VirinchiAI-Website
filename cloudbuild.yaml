@@ -38,9 +38,10 @@ steps:
       - 'setmeta'
       - '-h'
       - 'Cache-Control:public, max-age=31536000, immutable'
-      - 'gs://virinchi-website/assets/**'
+      - '-r'
+      - 'gs://virinchi-website/assets/'
 
-  # Step 6: Invalidate CDN cache so users always get latest index.html
+  # Step 6: Invalidate CDN cache for all files so users always get latest
   - name: 'gcr.io/cloud-builders/gcloud'
     args:
       - compute
@@ -48,7 +49,7 @@ steps:
       - invalidate-cdn-cache
       - virinchi-website-lb
       - --path
-      - /index.html
+      - /*
       - --global
 
 options:
