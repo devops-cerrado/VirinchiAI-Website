@@ -8,25 +8,25 @@ type Phase = "catalog" | "form" | "connecting" | "connected";
 
 const PHASE_ORDER: Phase[] = ["catalog", "form", "connecting", "connected"];
 const PHASE_DURATIONS: Record<Phase, number> = {
-  catalog:    3200,
-  form:       3600,
+  catalog: 3200,
+  form: 3600,
   connecting: 2400,
-  connected:  3800,
+  connected: 3800,
 };
 
 const sources = [
-  { id: "ms365",  name: "Microsoft 365",    desc: "SharePoint, OneDrive, Outlook, Teams", Icon: Cloud,         available: true,  color: "#0078d4" },
-  { id: "odoo",   name: "Odoo CRM",          desc: "Contacts, leads, invoices, inventory", Icon: HardDrive,     available: false, color: "#714b67" },
-  { id: "google", name: "Google Workspace",  desc: "Drive, Gmail, Calendar, Docs",         Icon: HardDrive,     available: false, color: "#4285f4" },
-  { id: "slack",  name: "Slack",             desc: "Messages, files and channels",         Icon: MessageSquare, available: false, color: "#e01e5a" },
-  { id: "db",     name: "Database",          desc: "PostgreSQL, MySQL, MongoDB",           Icon: Database,      available: false, color: "#4aaa80" },
+  { id: "ms365", name: "Microsoft 365", desc: "SharePoint, OneDrive, Outlook, Teams", Icon: Cloud, available: true, color: "#0078d4" },
+  { id: "odoo", name: "Odoo CRM", desc: "Contacts, leads, invoices, inventory", Icon: HardDrive, available: false, color: "#714b67" },
+  { id: "google", name: "Google Workspace", desc: "Drive, Gmail, Calendar, Docs", Icon: HardDrive, available: false, color: "#4285f4" },
+  { id: "slack", name: "Slack", desc: "Messages, files and channels", Icon: MessageSquare, available: false, color: "#e01e5a" },
+  { id: "db", name: "Database", desc: "PostgreSQL, MySQL, MongoDB", Icon: Database, available: false, color: "#4aaa80" },
 ];
 
 const formFields = [
   { label: "Connection Name", value: "Microsoft 365 — Production", masked: false },
-  { label: "Client ID",       value: "••••••••••••••••••••••••••", masked: true  },
-  { label: "Client Secret",   value: "••••••••••••••••••••••••••", masked: true  },
-  { label: "Tenant ID",       value: "••••••••••••••••••••••••••", masked: true  },
+  { label: "Client ID", value: "••••••••••••••••••••••••••", masked: true },
+  { label: "Client Secret", value: "••••••••••••••••••••••••••", masked: true },
+  { label: "Tenant ID", value: "••••••••••••••••••••••••••", masked: true },
 ];
 
 const connectingSteps = [
@@ -36,9 +36,9 @@ const connectingSteps = [
 ];
 
 const spSites = [
-  { name: "HR Team Site",      files: "4,231 files" },
-  { name: "Engineering Docs",  files: "7,892 files" },
-  { name: "Company Wiki",      files: "724 files"   },
+  { name: "HR Team Site", files: "4,231 files" },
+  { name: "Engineering Docs", files: "7,892 files" },
+  { name: "Company Wiki", files: "724 files" },
 ];
 
 const connectorPills = [
@@ -124,7 +124,7 @@ const FormPhase = ({ visibleFields }: { visibleFields: number }) => (
       </div>
       <div>
         <p className="text-sm font-semibold" style={{ color: "#f0edf8" }}>Sign in to Microsoft 365</p>
-        <p className="text-[11px]" style={{ color: "#6b5f8a" }}>BOLT OS needs permission to access your org's files</p>
+        <p className="text-[11px]" style={{ color: "#6b5f8a" }}>Virinchi AI needs permission to access your org's files</p>
       </div>
     </div>
 
@@ -176,7 +176,7 @@ const ConnectingPhase = ({ step }: { step: number }) => (
 
     <div className="space-y-3 w-full max-w-xs">
       {connectingSteps.map((s, i) => {
-        const isDone   = step > i + 1;
+        const isDone = step > i + 1;
         const isActive = step === i + 1;
         return (
           <motion.div
@@ -278,10 +278,10 @@ const ConnectedPhase = () => (
 // ── Orchestrator ──────────────────────────────────────────────
 
 const DataSourceAnimation = () => {
-  const [phase, setPhase]         = useState<Phase>("catalog");
+  const [phase, setPhase] = useState<Phase>("catalog");
   const [ms365Highlight, setMs365Highlight] = useState(false);
-  const [visibleFields, setVisibleFields]   = useState(0);
-  const [connectStep, setConnectStep]       = useState(0);
+  const [visibleFields, setVisibleFields] = useState(0);
+  const [connectStep, setConnectStep] = useState(0);
 
   useEffect(() => {
     setMs365Highlight(false);
@@ -308,10 +308,10 @@ const DataSourceAnimation = () => {
   }, [phase]);
 
   const phaseLabel: Record<Phase, string> = {
-    catalog:    "Add Connection",
-    form:       "Authenticate",
+    catalog: "Add Connection",
+    form: "Authenticate",
     connecting: "Connecting…",
-    connected:  "Connected ✓",
+    connected: "Connected ✓",
   };
 
   return (
@@ -323,7 +323,7 @@ const DataSourceAnimation = () => {
         <div className="w-3 h-3 rounded-full bg-[#28c840]" />
         <div className="flex items-center gap-2 ml-3">
           <FileText className="h-3.5 w-3.5" style={{ color: "#6b5f8a" }} />
-          <span className="text-xs font-medium" style={{ color: "#6b5f8a" }}>Data Sources — BOLT OS</span>
+          <span className="text-xs font-medium" style={{ color: "#6b5f8a" }}>Data Sources — Virinchi AI</span>
         </div>
         <div className="ml-auto">
           <AnimatePresence mode="wait">
@@ -345,10 +345,10 @@ const DataSourceAnimation = () => {
       {/* Content */}
       <div className="p-5" style={{ height: 380, overflow: "hidden" }}>
         <AnimatePresence mode="wait">
-          {phase === "catalog"    && <CatalogPhase    key="catalog"    highlighted={ms365Highlight} />}
-          {phase === "form"       && <FormPhase       key="form"       visibleFields={visibleFields} />}
+          {phase === "catalog" && <CatalogPhase key="catalog" highlighted={ms365Highlight} />}
+          {phase === "form" && <FormPhase key="form" visibleFields={visibleFields} />}
           {phase === "connecting" && <ConnectingPhase key="connecting" step={connectStep} />}
-          {phase === "connected"  && <ConnectedPhase  key="connected" />}
+          {phase === "connected" && <ConnectedPhase key="connected" />}
         </AnimatePresence>
       </div>
     </div>

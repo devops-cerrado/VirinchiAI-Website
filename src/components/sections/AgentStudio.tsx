@@ -185,9 +185,9 @@ const BizStep2 = ({ animKey }: { animKey: string }) => (
 );
 
 const BizStep3 = ({ animKey }: { animKey: string }) => (
-  <motion.div key={animKey} initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -6 }} transition={{ duration: 0.3 }} className="p-2 flex items-center justify-center h-full">
-    <p className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground absolute top-2 left-2">Connect data sources</p>
-    <div className="flex items-center gap-4 mt-4">
+  <motion.div key={animKey} initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -6 }} transition={{ duration: 0.3 }} className="p-2">
+    <p className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground mb-3">Connect data sources</p>
+    <div className="flex items-center justify-center gap-4">
       {/* Source nodes */}
       <div className="space-y-4">
         {dataSources.map((src, i) => {
@@ -356,40 +356,75 @@ const AgentStudio = () => {
 
         {/* Steps + Animation */}
         <div className="bg-card border border-border rounded-2xl overflow-hidden">
-          {/* Step indicators */}
-          <div className="grid grid-cols-4 border-b border-border">
-            {steps.map((s, i) => (
-              <button
-                key={s.step}
-                onClick={() => setActiveStep(i)}
-                className={`relative px-4 py-5 text-left transition-colors border-r last:border-r-0 border-border ${activeStep === i ? "bg-primary/5" : "hover:bg-secondary/50"
-                  }`}
-              >
-                <div className="flex items-center gap-3 mb-1">
-                  <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold shrink-0 transition-colors ${activeStep === i
-                    ? "bg-primary text-primary-foreground"
-                    : i < activeStep
-                      ? "bg-primary/20 text-primary"
-                      : "bg-secondary text-muted-foreground"
-                    }`}>
-                    {i < activeStep ? "✓" : s.step}
+          {/* Step indicators — desktop: 4-col with labels / mobile: circles + active title */}
+          <div className="border-b border-border">
+            {/* Desktop */}
+            <div className="hidden sm:grid grid-cols-4">
+              {steps.map((s, i) => (
+                <button
+                  key={s.step}
+                  onClick={() => setActiveStep(i)}
+                  className={`relative px-4 py-5 text-left transition-colors border-r last:border-r-0 border-border ${activeStep === i ? "bg-primary/5" : "hover:bg-secondary/50"}`}
+                >
+                  <div className="flex items-center gap-3 mb-1">
+                    <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold shrink-0 transition-colors ${activeStep === i ? "bg-primary text-primary-foreground" : i < activeStep ? "bg-primary/20 text-primary" : "bg-secondary text-muted-foreground"}`}>
+                      {i < activeStep ? "✓" : s.step}
+                    </div>
+                    <span className={`text-xs font-medium leading-tight ${activeStep === i ? "text-foreground" : "text-muted-foreground"}`}>
+                      {s.title}
+                    </span>
                   </div>
-                  <span className={`text-xs font-medium leading-tight ${activeStep === i ? "text-foreground" : "text-muted-foreground"}`}>
-                    {s.title}
-                  </span>
-                </div>
-                {/* Progress bar */}
-                {activeStep === i && (
-                  <motion.div
-                    key={animKey}
-                    className="absolute bottom-0 left-0 h-0.5 bg-primary rounded-full"
-                    initial={{ width: "0%" }}
-                    animate={{ width: "100%" }}
-                    transition={{ duration: STEP_DURATION / 1000, ease: "linear" }}
-                  />
-                )}
-              </button>
-            ))}
+                  {activeStep === i && (
+                    <motion.div
+                      key={animKey}
+                      className="absolute bottom-0 left-0 h-0.5 bg-primary rounded-full"
+                      initial={{ width: "0%" }}
+                      animate={{ width: "100%" }}
+                      transition={{ duration: STEP_DURATION / 1000, ease: "linear" }}
+                    />
+                  )}
+                </button>
+              ))}
+            </div>
+
+            {/* Mobile */}
+            <div className="sm:hidden px-4 py-4">
+              <div className="flex items-center">
+                {steps.map((s, i) => (
+                  <>
+                    <button
+                      key={s.step}
+                      onClick={() => setActiveStep(i)}
+                      className="flex flex-col items-center shrink-0"
+                    >
+                      <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold transition-colors ${activeStep === i ? "bg-primary text-primary-foreground" : i < activeStep ? "bg-primary/20 text-primary" : "bg-secondary text-muted-foreground"}`}>
+                        {i < activeStep ? "✓" : s.step}
+                      </div>
+                    </button>
+                    {i < steps.length - 1 && (
+                      <div key={`line-${i}`} className="relative flex-1 h-0.5 bg-secondary mx-1">
+                        {i < activeStep && (
+                          <div className="absolute inset-0 bg-primary rounded-full" />
+                        )}
+                      </div>
+                    )}
+                  </>
+                ))}
+              </div>
+              <p className="text-xs font-semibold text-foreground text-center mt-3">
+                Step {steps[activeStep].step}: {steps[activeStep].title}
+              </p>
+              {/* Progress bar */}
+              <div className="mt-2 h-0.5 bg-secondary rounded-full overflow-hidden">
+                <motion.div
+                  key={animKey}
+                  className="h-full bg-primary rounded-full"
+                  initial={{ width: "0%" }}
+                  animate={{ width: "100%" }}
+                  transition={{ duration: STEP_DURATION / 1000, ease: "linear" }}
+                />
+              </div>
+            </div>
           </div>
 
           {/* Animation panel */}
