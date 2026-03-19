@@ -72,7 +72,7 @@ const Navbar = () => {
           >
             <div className="flex items-center justify-center gap-2 py-2 px-4 text-sm text-primary-foreground">
               <Zap className="w-4 h-4" />
-              <span className="font-medium">Bolt OS — Now Generally Available</span>
+              <span className="font-medium">Virinchi AI — Now Generally Available</span>
               <button
                 onClick={() => setShowAnnouncement(false)}
                 className="ml-4 p-0.5 rounded hover:bg-primary-foreground/20 transition-colors"

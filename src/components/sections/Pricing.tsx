@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { pricingData } from "@/constants/pricingData";
 
 const Pricing = () => {
+  const navigate = useNavigate();
   return (
     <section className="section-padding bg-secondary/30">
       <div className="max-w-7xl mx-auto">
@@ -48,7 +50,9 @@ const Pricing = () => {
                 ))}
               </ul>
 
-              <button className={`w-full py-3 rounded-lg font-semibold text-sm transition-opacity hover:opacity-90 ${
+              <button
+                onClick={() => navigate("/request-demo")}
+                className={`w-full py-3 rounded-lg font-semibold text-sm transition-opacity hover:opacity-90 ${
                 tier.popular
                   ? "bg-primary text-primary-foreground"
                   : "bg-secondary text-foreground"

@@ -1,16 +1,16 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import { CheckCircle, Zap, Shield, Users } from "lucide-react";
+import { CheckCircle, Zap, Shield, Users, ArrowLeft } from "lucide-react";
 
 type FormData = Record<string, string>;
 
 const sizeOptions = ["1–10", "11–50", "51–200", "201–500", "500+"];
 
 const highlights = [
-  { icon: Zap,    text: "Live platform walkthrough tailored to your industry" },
+  { icon: Zap, text: "Live platform walkthrough tailored to your industry" },
   { icon: Shield, text: "See data sovereignty & governance controls in action" },
-  { icon: Users,  text: "Meet the team — no sales pressure" },
+  { icon: Users, text: "Meet the team — no sales pressure" },
 ];
 
 const RequestDemo = () => {
@@ -87,8 +87,15 @@ const RequestDemo = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background flex items-center pt-20">
-      <div className="max-w-5xl mx-auto w-full px-4 md:px-8 py-12">
+    <div className="min-h-screen bg-background flex items-center pt-16 md:pt-20">
+      <div className="max-w-5xl mx-auto w-full px-4 md:px-8 py-6 md:py-12">
+        <button
+          onClick={() => navigate(-1)}
+          className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-4 md:mb-8"
+        >
+          <ArrowLeft className="w-4 h-4" />
+          Back
+        </button>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
 
           {/* Left — info */}
@@ -98,7 +105,7 @@ const RequestDemo = () => {
               See Virinchi AI<br />in Action
             </h1>
             <p className="text-muted-foreground mb-8 leading-relaxed">
-              Get a personalised walkthrough of Bolt OS — built around your industry, your data, and your team's workflows.
+              Get a personalised walkthrough of Virinchi AI — built around your industry, your data, and your team's workflows.
             </p>
             <div className="space-y-4">
               {highlights.map(({ icon: Icon, text }) => (
