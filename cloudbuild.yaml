@@ -21,13 +21,35 @@ steps:
 
   # Step 3: Deploy dist/ to GCS bucket
   - name: 'gcr.io/cloud-builders/gsutil'
+    args: ['-m', 'rsync', '-r', '-d', './dist', 'gs://virinchi-website']
+
+  # Step 4: Set index.html to never cache (always fetch fresh)
+  - name: 'gcr.io/cloud-builders/gsutil'
+    args:
+      - setmeta
+      - '-h'
+      - 'Cache-Control:no-cache, no-store, must-revalidate'
+      - 'gs://virinchi-website/index.html'
+
+  # Step 5: Set long cache for hashed assets (safe because filenames change on rebuild)
+  - name: 'gcr.io/cloud-builders/gsutil'
     args:
       - '-m'
-      - 'rsync'
-      - '-r'
-      - '-d'
-      - './dist'
-      - 'gs://virinchi-website'
+      - 'setmeta'
+      - '-h'
+      - 'Cache-Control:public, max-age=31536000, immutable'
+      - 'gs://virinchi-website/assets/**'
+
+  # Step 6: Invalidate CDN cache so users always get latest index.html
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args:
+      - compute
+      - url-maps
+      - invalidate-cdn-cache
+      - virinchi-website-lb
+      - --path
+      - /index.html
+      - --global
 
 options:
   logging: CLOUD_LOGGING_ONLY
