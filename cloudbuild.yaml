@@ -43,6 +43,7 @@ steps:
 
   # Step 6: Invalidate CDN cache for all files so users always get latest
   - name: 'gcr.io/cloud-builders/gcloud'
+    allowFailure: true
     args:
       - compute
       - url-maps
