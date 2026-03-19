@@ -121,7 +121,7 @@ const Footer = () => (
 
       {/* Bottom */}
       <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
-        <p className="text-sm text-muted-foreground">© 2025 Virinchi AI. All rights reserved.</p>
+        <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} Virinchi AI. All rights reserved.</p>
         <div className="flex items-center gap-4">
           <a href="https://www.linkedin.com/company/virinchi-ai/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
