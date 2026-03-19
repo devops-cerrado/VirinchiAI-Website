@@ -9,7 +9,7 @@ import { useTheme } from "next-themes";
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [showAnnouncement, setShowAnnouncement] = useState(true);
+  const [showAnnouncement, setShowAnnouncement] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   const { theme, setTheme } = useTheme();
@@ -106,8 +106,8 @@ const Navbar = () => {
                   href={link.path}
                   onClick={(e) => handleNavClick(e, link.path)}
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${isHashActive(link.path)
-                      ? "text-primary bg-primary/10"
-                      : "text-muted-foreground hover:text-foreground"
+                    ? "text-primary bg-primary/10"
+                    : "text-muted-foreground hover:text-foreground"
                     }`}
                 >
                   {link.label}
