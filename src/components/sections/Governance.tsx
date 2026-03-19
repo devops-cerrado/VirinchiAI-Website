@@ -7,7 +7,7 @@ const sections = [
     title: "Anti-Hallucination Engine",
     color: "border-t-primary",
     items: [
-      "Deterministic responses",
+      "Anti-hallucination engine that brings hallucinations down to ~0.01%",
       "Keep responses accurate and on trusted data sources",
       "Multiple checkpoints to ensure responses are trusted",
     ],

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { useCounterAnimation } from "@/hooks/useCounterAnimation";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
@@ -79,9 +80,9 @@ const Hero = () => {
         </motion.p>
 
         <motion.div variants={item} className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-          <button className="bg-primary text-primary-foreground px-8 py-3.5 rounded-lg font-semibold text-sm hover:opacity-90 transition-opacity w-full sm:w-auto">
-            Start Free Trial
-          </button>
+          <Link to="/request-demo" className="bg-primary text-primary-foreground px-8 py-3.5 rounded-lg font-semibold text-sm hover:opacity-90 transition-opacity w-full sm:w-auto text-center">
+            Request Demo
+          </Link>
           <button className="border border-border text-foreground px-8 py-3.5 rounded-lg font-semibold text-sm hover:bg-secondary transition-colors w-full sm:w-auto">
             Watch 3-Min Demo →
           </button>

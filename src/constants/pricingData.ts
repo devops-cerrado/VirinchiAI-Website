@@ -9,21 +9,8 @@ export type PricingTier = {
 
 export const pricingData: PricingTier[] = [
   {
-    name: "STARTER",
-    price: 299,
-    description: "For teams just getting started",
-    features: [
-      "Up to 5 agents",
-      "5 data connectors",
-      "10K queries/month",
-      "Enterprise Search",
-      "Basic monitoring",
-    ],
-    cta: "Start Free Trial",
-  },
-  {
     name: "PROFESSIONAL",
-    price: 799,
+    price: null,
     description: "For growing organizations",
     features: [
       "Unlimited agents",
@@ -33,7 +20,7 @@ export const pricingData: PricingTier[] = [
       "Smart Intelligence Control Tower",
       "Fine-tuning engine",
     ],
-    cta: "Get Started",
+    cta: "Contact Sales",
     popular: true,
   },
   {
