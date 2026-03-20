@@ -48,7 +48,7 @@ const cardVariants = {
 
 const stats = [
   { label: "Founded", value: "2026" },
-  { label: "Enterprise Clients", value: "50+" },
+  { label: "Enterprise Clients", value: "5+" },
   { label: "Countries", value: "2" },
 ];
 

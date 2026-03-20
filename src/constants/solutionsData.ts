@@ -45,7 +45,7 @@ export const solutions: Solution[] = [
     name: "Virinchi Finance",
     description: "Financial commentary and AI-driven insights from balance sheets.",
     detail: [
-      "Financial commentary and AI-driven insights from balance sheets — turning raw financial data into actionable narratives for faster, smarter decision-making.",
+      "Financial commentary and AI-driven insights from balance sheets turning raw financial data into actionable narratives for faster, smarter decision-making",
     ],
     icon: DollarSign,
   },

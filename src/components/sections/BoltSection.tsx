@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Server, Cloud, Lock, Search, MessageCircle, BarChart3, ArrowRight, Sparkles } from "lucide-react";
 
 const boltFeatures = [
-  { icon: Server, label: "Single platform — Open-Source or Proprietary Models of your choice" },
+  { icon: Server, label: "Single platform - Open Source or Proprietary Models of your choice" },
   { icon: Cloud, label: "Flexible — Deployed locally or private cloud" },
   { icon: Lock, label: "Sovereignty — Layered decoupling of Infra and Model" },
   { icon: Search, label: "Search — Unified AI-powered search across all enterprise data" },
@@ -161,10 +161,12 @@ const BoltSection = () => (
     <div className="max-w-7xl mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
-          <span className="text-primary text-sm font-semibold tracking-wider uppercase mb-3 block">VIRINCHI BOLT</span>
-          <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground mb-4">
-            Your Private GPT for Enterprise
-          </h2>
+          <div className="text-center">
+            <span className="text-primary text-sm font-semibold tracking-wider uppercase mb-3 block">VIRINCHI BOLT PLATFORM</span>
+            <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground mb-4">
+              Your Private GPT for Enterprise
+            </h2>
+          </div>
           <p className="text-muted-foreground text-lg mb-8">
             The Bolt Platform enables users to talk to their enterprise data
           </p>
