@@ -14,13 +14,13 @@ const Home = () => (
   <>
     <Hero />
     <WhyVirinchi />
-    <BoltSection />
-    <DataIntegration />
-    <AgentStudio />
-    <Platform />
-    <Solutions />
     <PreBuiltAgents />
     <Governance />
+    <Platform />
+    <DataIntegration />
+    <BoltSection />
+    <AgentStudio />
+    <Solutions />
     <About />
     <CTABanner />
   </>

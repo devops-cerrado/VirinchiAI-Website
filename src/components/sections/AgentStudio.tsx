@@ -310,7 +310,7 @@ const AgentStudio = () => {
           className="bg-card border-l-4 border-primary rounded-r-xl p-6 md:p-8 mb-16 max-w-4xl mx-auto"
         >
           <p className="text-muted-foreground italic leading-relaxed">
-            "Virinchi Agent Studio provides the ease of No-Code for business users and Low-Code for developers — without forcing you to hand over your data or your model choice to a Big Tech gatekeeper."
+            "Virinchi Agent Studio provides the ease of No-Code for business users and Low-Code for developers without forcing you to hand over your data or your model choice to a Big Tech gatekeeper."
           </p>
         </motion.div>
 

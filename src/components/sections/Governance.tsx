@@ -17,9 +17,9 @@ const sections = [
     title: "Responsible AI",
     color: "border-t-blue-500",
     items: [
-      "Knowledge Base — Train agents on trusted data sources",
+      "Knowledge Base - Train agents on trusted data sources",
       "Guardrails to ensure responses are Deterministic",
-      "Deliver enterprise-grade security, fairness, and transparency",
+      "Deliver enterprise grade security, fairness, and transparency",
     ],
   },
   {

@@ -5,7 +5,7 @@ const features = [
   {
     icon: DollarSign,
     title: "Finance & Accounting",
-    description: "Automated commentary, reconciliation, variance analysis and regulatory reporting — powered by multi-agent pipelines.",
+    description: "Automated commentary, reconciliation, variance analysis and regulatory reporting powered by multi-agent pipelines.",
     items: ["Balance Sheet Commentary", "GL Reconciliation Automation", "Regulatory Reporting Engine", "Spend Analysis Dashboard"],
   },
   {
@@ -17,7 +17,7 @@ const features = [
   {
     icon: Truck,
     title: "Operations & Supply Chain",
-    description: "Demand forecasting, inventory optimization, supplier management and quality control — all orchestrated by AI agents.",
+    description: "Demand forecasting, inventory optimization, supplier management and quality control all orchestrated by AI agents.",
     items: ["Demand Forecasting System", "Supplier Risk Monitoring", "Quality Inspection Automation", "Logistics Route Optimisation"],
   },
 ];
@@ -31,7 +31,7 @@ const Platform = () => (
           Build Complex Enterprise Apps in Days
         </h2>
         <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-          Beyond Agents — Agent Studio enables organizations to build full-featured AI applications delivered in Days.
+          Beyond Agents - Agent Studio enables organizations to build full featured AI applications delivered in Days.
         </p>
       </div>
 

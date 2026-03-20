@@ -1,6 +1,8 @@
 import { NavLink } from "react-router-dom";
 import { MapPin } from "lucide-react";
 import logo from "@/assets/virinchi_full_logo_bg_removed.png";
+import flagUs from "@/assets/flag-us.svg";
+import flagIn from "@/assets/flag-in.svg";
 
 const footerLinks = {
   Platform: [
@@ -36,7 +38,8 @@ const offices = [
   {
     entity: "Virinchi AI Inc",
     lines: ["Delaware, USA"],
-    flag: "🇺🇸",
+    flag: flagUs,
+    flagAlt: "US",
   },
   {
     entity: "Virinchi AI Pvt Ltd",
@@ -47,7 +50,8 @@ const offices = [
       "Gachibowli, Hyderabad",
       "Telangana 500032, India",
     ],
-    flag: "🇮🇳",
+    flag: flagIn,
+    flagAlt: "India",
   },
 ];
 
@@ -107,8 +111,9 @@ const Footer = () => (
           <div className="space-y-5">
             {offices.map((office) => (
               <div key={office.entity}>
-                <p className="text-sm font-semibold text-foreground mb-1">
-                  {office.flag} {office.entity}
+                <p className="text-sm font-semibold text-foreground mb-1 flex items-center gap-1.5">
+                  <img src={office.flag} alt={office.flagAlt} className="w-5 h-auto shrink-0" />
+                  {office.entity}
                 </p>
                 {office.lines.map((line) => (
                   <p key={line} className="text-sm text-muted-foreground leading-relaxed">{line}</p>
