@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { Rocket, Globe } from "lucide-react";
 import srikanthPhoto from "@/assets/srikanth_porika.png";
 import jyothirmaiPhoto from "@/assets/jyothirmai.jpeg";
+import flagUs from "@/assets/flag-us.svg";
+import flagIn from "@/assets/flag-in.svg";
 
 const LinkedInIcon = ({ className = "w-4 h-4" }: { className?: string }) => (
   <svg className={className} fill="currentColor" viewBox="0 0 24 24">
@@ -100,11 +102,11 @@ const About = () => (
           </p>
           <div className="space-y-2 text-sm">
             <div className="flex items-start gap-2 text-muted-foreground">
-              <span className="text-base leading-none mt-0.5">🇺🇸</span>
+              <img src={flagUs} alt="US" className="w-5 h-auto mt-0.5 shrink-0" />
               <span>Delaware, USA — Parent entity</span>
             </div>
             <div className="flex items-start gap-2 text-muted-foreground">
-              <span className="text-base leading-none mt-0.5">🇮🇳</span>
+              <img src={flagIn} alt="India" className="w-5 h-auto mt-0.5 shrink-0" />
               <span>Gachibowli, Hyderabad, India — R&amp;D &amp; Engineering</span>
             </div>
           </div>
