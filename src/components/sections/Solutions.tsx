@@ -3,8 +3,8 @@ import { Play } from "lucide-react";
 import { solutions, industries } from "@/constants/solutionsData";
 
 const videos = [
-  { title: "Virinchi Predictive Analytics",             videoId: "y1qqm24aNog" },
-  { title: "Virinchi Finance — Balance Sheet Commentary", videoId: "wfeCkFLmwRY" },
+  { title: "Virinchi Predictive Analytics - Risk Management", videoId: "1dQDVk_LQcA" },
+  { title: "Virinchi Finance - Balance Sheet Analytics",      videoId: "OoMzanpFHz4" },
 ];
 
 const YoutubeEmbed = ({ title, videoId }: { title: string; videoId: string }) => (
