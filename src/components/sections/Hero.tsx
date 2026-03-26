@@ -1,7 +1,9 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useCounterAnimation } from "@/hooks/useCounterAnimation";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import VideoModal from "@/components/VideoModal";
 
 const stats = [
   { value: 50, suffix: "+", label: "PRE-BUILT AGENTS" },
@@ -33,6 +35,7 @@ const item = {
 
 const Hero = () => {
   const { ref, isVisible } = useScrollAnimation(0.1);
+  const [showVideo, setShowVideo] = useState(false);
 
   return (
     <section ref={ref} className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -83,10 +86,11 @@ const Hero = () => {
           <Link to="/request-demo" className="bg-primary text-primary-foreground px-8 py-3.5 rounded-lg font-semibold text-sm hover:opacity-90 transition-opacity w-full sm:w-auto text-center">
             Request Demo
           </Link>
-          <button className="border border-border text-foreground px-8 py-3.5 rounded-lg font-semibold text-sm hover:bg-secondary transition-colors w-full sm:w-auto">
+          <button onClick={() => setShowVideo(true)} className="border border-border text-foreground px-8 py-3.5 rounded-lg font-semibold text-sm hover:bg-secondary transition-colors w-full sm:w-auto">
             Watch 3-Min Demo →
           </button>
         </motion.div>
+        {showVideo && <VideoModal onClose={() => setShowVideo(false)} />}
 
         <motion.div variants={item} className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {stats.map((stat) => (
