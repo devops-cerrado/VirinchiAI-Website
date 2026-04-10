@@ -36,8 +36,11 @@ const footerLinks = {
 
 const offices = [
   {
-    entity: "Virinchi AI Inc",
-    lines: ["Delaware, USA"],
+    entity: "VirinchiAI, Inc.",
+    lines: [
+      "1111B S Governors Ave # 90813",
+      "Dover, DE 19904",
+    ],
     flag: flagUs,
     flagAlt: "US",
   },
