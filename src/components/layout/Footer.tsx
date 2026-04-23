@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { MapPin } from "lucide-react";
+import { MapPin, Mail } from "lucide-react";
 import logo from "@/assets/virinchi_full_logo_bg_removed.png";
 import flagUs from "@/assets/flag-us.svg";
 import flagIn from "@/assets/flag-in.svg";
@@ -123,6 +123,12 @@ const Footer = () => (
                 ))}
               </div>
             ))}
+            <div className="flex items-center gap-1.5">
+              <Mail className="w-3.5 h-3.5 text-muted-foreground shrink-0" />
+              <a href="mailto:support@virinchi.ai" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                support@virinchi.ai
+              </a>
+            </div>
           </div>
         </div>
       </div>
