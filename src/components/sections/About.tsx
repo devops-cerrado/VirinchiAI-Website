@@ -17,7 +17,7 @@ const allMembers = [
     designation: "Founder & CEO",
     linkedin: "https://www.linkedin.com/in/porikasrikanth",
     photo: srikanthPhoto,
-    bio: "Award-winning business leader with 20+ years driving digital transformations at Kyndryl and IBM. Executive MBA from ISB, with specializations from Wharton (M&A) and LBS (Business Model Innovation). Founder & CEO of Cerrado Consulting Services. Visiting Professor at Mahindra University Hyderabad and NIT Warangal.",
+    bio: "Award-winning business leader with 20+ years driving digital transformations at Kyndryl and IBM. Executive MBA from ISB, with specializations from Wharton (M&A) and LBS (Business Model Innovation). Founder & CEO of virinchiAI, Inc. | Cerrado Consulting Services LLP | Trustee of Symposium | Visiting Professor at Mahindra University Hyderabad and NIT Warangal",
   },
   {
     name: "Jyothirmai Khethavath",
