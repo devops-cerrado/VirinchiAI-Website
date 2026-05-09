@@ -44,6 +44,9 @@ jobs:
           VITE_EMAIL_API_URL: ${{ secrets.VITE_EMAIL_API_URL }}
           VITE_EMAIL_API_KEY: ${{ secrets.VITE_EMAIL_API_KEY }}
 
+      - name: Remove node_modules before deploy
+        run: rm -rf node_modules
+
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
