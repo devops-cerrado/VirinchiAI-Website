@@ -1,0 +1,10 @@
+{
+  "mimeTypes": {
+    ".js": "application/javascript",
+    ".css": "text/css"
+  },
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": ["/assets/*"]
+  }
+}
