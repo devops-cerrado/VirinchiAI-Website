@@ -60,25 +60,32 @@ const Solutions = () => {
         >
           {solutions.map((s) => {
             const Icon = s.icon;
-            return (
-              <div key={s.name} className="group [perspective:1000px] h-48">
-                <div className="relative w-full h-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-                  {/* Front */}
-                  <div className="absolute inset-0 bg-card border border-border rounded-xl p-6 [backface-visibility:hidden] flex flex-col">
-                    <Icon className="w-7 h-7 text-primary mb-3 shrink-0" />
-                    <h3 className="font-heading font-bold text-base text-foreground mb-2 leading-tight">{s.name}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed line-clamp-4">{s.description}</p>
-                  </div>
-                  {/* Back */}
-                  <div className="absolute inset-0 bg-primary/35 border border-primary/60 rounded-xl p-6 [backface-visibility:hidden] [transform:rotateY(180deg)] flex flex-col">
-                    <h3 className="font-heading font-bold text-base text-foreground mb-2 leading-tight shrink-0">{s.name}</h3>
-                    <div className="overflow-y-auto flex-1 space-y-2 pr-1">
-                      {s.detail.map((para, i) => (
-                        <p key={i} className="text-xs text-muted-foreground leading-relaxed">{para}</p>
-                      ))}
-                    </div>
+            const cardInner = (
+              <div className="relative w-full h-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                {/* Front */}
+                <div className="absolute inset-0 bg-card border border-border rounded-xl p-6 [backface-visibility:hidden] flex flex-col">
+                  <Icon className="w-7 h-7 text-primary mb-3 shrink-0" />
+                  <h3 className="font-heading font-bold text-base text-foreground mb-2 leading-tight">{s.name}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed line-clamp-4">{s.description}</p>
+                </div>
+                {/* Back */}
+                <div className="absolute inset-0 bg-primary/35 border border-primary/60 rounded-xl p-6 [backface-visibility:hidden] [transform:rotateY(180deg)] flex flex-col">
+                  <h3 className="font-heading font-bold text-base text-foreground mb-2 leading-tight shrink-0">{s.name}</h3>
+                  <div className="overflow-y-auto flex-1 space-y-2 pr-1">
+                    {s.detail.map((para, i) => (
+                      <p key={i} className="text-xs text-muted-foreground leading-relaxed">{para}</p>
+                    ))}
                   </div>
                 </div>
+              </div>
+            );
+            return s.url ? (
+              <a key={s.name} href={s.url} target="_blank" rel="noopener noreferrer" className="group [perspective:1000px] h-48 block cursor-pointer">
+                {cardInner}
+              </a>
+            ) : (
+              <div key={s.name} className="group [perspective:1000px] h-48">
+                {cardInner}
               </div>
             );
           })}
