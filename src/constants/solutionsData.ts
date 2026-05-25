@@ -5,6 +5,7 @@ export type Solution = {
   description: string;
   detail: string[];
   icon: any;
+  url?: string;
 };
 
 export const solutions: Solution[] = [
@@ -40,6 +41,7 @@ export const solutions: Solution[] = [
       "Our GenAI and Agentic AI workflows make it effortless to build and deploy intelligent bots that don't just talk — they solve customer concerns.",
     ],
     icon: HeartHandshake,
+    url: "https://cerrado-calling-agent.vercel.app/",
   },
   {
     name: "Virinchi Finance",
