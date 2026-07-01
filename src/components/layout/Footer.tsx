@@ -26,12 +26,10 @@ const footerLinks = {
     // { label: "Blog", path: "/about" },
     // { label: "Contact", path: "/about" },
   ],
-  // Legal: [
-  //   { label: "Privacy Policy", path: "#" },
-  //   { label: "Terms of Service", path: "#" },
-  //   { label: "Security", path: "#" },
-  //   { label: "Cookie Policy", path: "#" },
-  // ],
+  Legal: [
+    { label: "Privacy Policy", path: "/privacy-policy" },
+    { label: "Terms of Service", path: "/terms-of-service" },
+  ],
 };
 
 const offices = [
@@ -69,7 +67,7 @@ const scrollTo = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
 const Footer = () => (
   <footer className="bg-background border-t border-border">
     <div className="max-w-7xl mx-auto px-4 md:px-8 py-16">
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8">
         {/* Brand */}
         <div className="col-span-2 sm:col-span-3 lg:col-span-1">
           <img src={logo} alt="Virinchi AI" className="h-10 w-auto mb-4" />

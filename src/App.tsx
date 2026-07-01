@@ -8,6 +8,8 @@ import Footer from "@/components/layout/Footer";
 import Home from "./pages/Home";
 import PricingPage from "./pages/PricingPage";
 import RequestDemo from "./pages/RequestDemo";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 import ScrollProgress from "./components/ScrollProgress";
@@ -27,6 +29,8 @@ const App = () => (
           <Route path="/" element={<Home />} />
           <Route path="/pricing" element={<PricingPage />} />
           <Route path="/request-demo" element={<RequestDemo />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
