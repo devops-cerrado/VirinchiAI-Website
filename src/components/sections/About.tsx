@@ -3,7 +3,6 @@ import { Rocket, Globe } from "lucide-react";
 import srikanthPhoto from "@/assets/srikanth_porika.png";
 import jyothirmaiPhoto from "@/assets/jyothirmai.jpeg";
 import flagUs from "@/assets/flag-us.svg";
-import flagIn from "@/assets/flag-in.svg";
 
 const LinkedInIcon = ({ className = "w-4 h-4" }: { className?: string }) => (
   <svg className={className} fill="currentColor" viewBox="0 0 24 24">
@@ -51,7 +50,7 @@ const cardVariants = {
 const stats = [
   { label: "Founded", value: "2026" },
   { label: "Enterprise Clients", value: "5+" },
-  { label: "Countries", value: "2" },
+  { label: "Countries", value: "1" },
 ];
 
 const About = () => (
@@ -98,16 +97,12 @@ const About = () => (
           <Globe className="w-8 h-8 text-primary mb-4" />
           <h3 className="font-heading font-bold text-xl text-foreground mb-3">Global Presence</h3>
           <p className="text-muted-foreground leading-relaxed mb-4">
-            Incorporated in Delaware, USA (Virinchi AI Inc) with R&amp;D and engineering operations in Hyderabad, India (Virinchi AI Pvt Ltd).
+            Incorporated in Delaware, USA (Virinchi AI Inc).
           </p>
           <div className="space-y-2 text-sm">
             <div className="flex items-start gap-2 text-muted-foreground">
               <img src={flagUs} alt="US" className="w-5 h-auto mt-0.5 shrink-0" />
               <span>Delaware, USA — Parent entity</span>
-            </div>
-            <div className="flex items-start gap-2 text-muted-foreground">
-              <img src={flagIn} alt="India" className="w-5 h-auto mt-0.5 shrink-0" />
-              <span>Gachibowli, Hyderabad, India — R&amp;D &amp; Engineering</span>
             </div>
           </div>
         </div>

@@ -4,7 +4,7 @@ const sections = [
   {
     heading: "1. Introduction",
     body: [
-      "This Privacy Policy explains how virinchiAI, Inc. and its affiliate virinchiAI Pvt Ltd (together, \"Virinchi AI\", \"we\", \"us\", or \"our\") collect, use, disclose, and safeguard information when you visit our website, use our platform (including Virinchi Bolt, Agent Studio, App Builder, and Control Tower), or otherwise interact with us.",
+      "This Privacy Policy explains how virinchiAI, Inc. (\"Virinchi AI\", \"we\", \"us\", or \"our\") collects, uses, discloses, and safeguards information when you visit our website, use our platform (including Virinchi Bolt, Agent Studio, App Builder, and Control Tower), or otherwise interact with us.",
       "By using our website or platform, you agree to the collection and use of information in accordance with this policy.",
     ],
   },
@@ -18,7 +18,17 @@ const sections = [
     ],
   },
   {
-    heading: "3. How We Use Information",
+    heading: "3. Google User Data",
+    body: [
+      "If you choose to connect a Google Account to our platform (e.g., Virinchi Bolt), we access the following Google user data, strictly on a read-only basis, only after you explicitly grant consent via Google's OAuth screen: Gmail messages, Google Drive files, and Google Calendar events.",
+      "We use this data solely to power the features you enable — such as search, and personal briefings/summaries — within your own workspace. We do not use Google user data for advertising, and we do not sell it.",
+      "Synced Google data is stored securely within our infrastructure, accessible only to you and your workspace, and is not shared with third parties except service providers who help us operate the platform under confidentiality obligations.",
+      "You may disconnect a Google connector at any time from within the platform, which stops further syncing. To request deletion of previously synced Google data, contact us at support@virinchi.ai and we will delete it within a reasonable time. You can also revoke our access at any time from your Google Account at myaccount.google.com/permissions.",
+      "Virinchi AI's use and transfer of information received from Google APIs to any other app will adhere to the Google API Services User Data Policy, including the Limited Use requirements.",
+    ],
+  },
+  {
+    heading: "4. How We Use Information",
     body: [
       "To provide, operate, and maintain our website and platform.",
       "To respond to inquiries, demo requests, and support requests.",
@@ -28,52 +38,50 @@ const sections = [
     ],
   },
   {
-    heading: "4. How We Share Information",
+    heading: "5. How We Share Information",
     body: [
       "We do not sell your personal information. We may share information with:",
       "Service providers who perform services on our behalf (e.g., hosting, analytics, email delivery), under contractual confidentiality obligations.",
-      "Affiliates, namely virinchiAI, Inc. and virinchiAI Pvt Ltd, for the purposes described in this policy.",
       "Legal authorities where required to comply with applicable law, regulation, legal process, or governmental request.",
       "Successors in the event of a merger, acquisition, or sale of assets, subject to equivalent privacy protections.",
     ],
   },
   {
-    heading: "5. Data Security & Retention",
+    heading: "6. Data Security & Retention",
     body: [
       "We implement administrative, technical, and physical safeguards designed to protect information against unauthorized access, alteration, disclosure, or destruction.",
       "We retain personal information for as long as necessary to fulfil the purposes described in this policy, comply with legal obligations, resolve disputes, and enforce our agreements.",
     ],
   },
   {
-    heading: "6. Cookies",
+    heading: "7. Cookies",
     body: [
       "We use cookies to keep you signed in, remember preferences, and understand how our website is used. You can control cookies through your browser settings; disabling cookies may affect certain features of our website.",
     ],
   },
   {
-    heading: "7. International Data Transfers",
+    heading: "8. International Data Transfers",
     body: [
-      "Virinchi AI operates in the United States and India. Information we collect may be transferred to, stored, and processed in either country or other jurisdictions where our service providers operate, subject to appropriate safeguards.",
+      "Virinchi AI operates in the United States. Information we collect may be transferred to, stored, and processed in the United States or other jurisdictions where our service providers operate, subject to appropriate safeguards.",
     ],
   },
   {
-    heading: "8. Your Rights",
+    heading: "9. Your Rights",
     body: [
-      "Depending on your jurisdiction, you may have the right to access, correct, delete, or restrict the use of your personal information, or to object to certain processing. To exercise these rights, contact us using the details in Section 10.",
+      "Depending on your jurisdiction, you may have the right to access, correct, delete, or restrict the use of your personal information, or to object to certain processing. To exercise these rights, contact us using the details in Section 11.",
     ],
   },
   {
-    heading: "9. Changes to This Policy",
+    heading: "10. Changes to This Policy",
     body: [
       "We may update this Privacy Policy from time to time. Material changes will be reflected by updating the \"last updated\" date at the top of this page. Continued use of our website or platform after changes take effect constitutes acceptance of the revised policy.",
     ],
   },
   {
-    heading: "10. Contact Us",
+    heading: "11. Contact Us",
     body: [
       "If you have questions about this Privacy Policy, contact us at support@virinchi.ai.",
       "virinchiAI, Inc. — 1111B S Governors Ave # 90813, Dover, DE 19904, USA.",
-      "virinchiAI Pvt Ltd — WellWork, 5th Floor, MPM Corporate House, Plot No. 44, Jayabheri Pine Valley, Gachibowli, Hyderabad, Telangana 500032, India.",
     ],
   },
 ];

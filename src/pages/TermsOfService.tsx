@@ -4,7 +4,7 @@ const sections = [
   {
     heading: "1. Acceptance of Terms",
     body: [
-      "These Terms of Service (\"Terms\") govern your access to and use of the website and platform operated by virinchiAI, Inc. and its affiliate virinchiAI Pvt Ltd (together, \"Virinchi AI\", \"we\", \"us\", or \"our\"), including Virinchi Bolt, Agent Studio, App Builder, and Control Tower (collectively, the \"Service\").",
+      "These Terms of Service (\"Terms\") govern your access to and use of the website and platform operated by virinchiAI, Inc. (\"Virinchi AI\", \"we\", \"us\", or \"our\"), including Virinchi Bolt, Agent Studio, App Builder, and Control Tower (collectively, the \"Service\").",
       "By accessing or using the Service, you agree to be bound by these Terms. If you are using the Service on behalf of an organization, you represent that you have authority to bind that organization to these Terms.",
     ],
   },
@@ -87,7 +87,6 @@ const sections = [
     body: [
       "If you have questions about these Terms, contact us at support@virinchi.ai.",
       "virinchiAI, Inc. — 1111B S Governors Ave # 90813, Dover, DE 19904, USA.",
-      "virinchiAI Pvt Ltd — WellWork, 5th Floor, MPM Corporate House, Plot No. 44, Jayabheri Pine Valley, Gachibowli, Hyderabad, Telangana 500032, India.",
     ],
   },
 ];

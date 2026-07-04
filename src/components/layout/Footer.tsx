@@ -2,7 +2,6 @@ import { NavLink } from "react-router-dom";
 import { MapPin, Mail } from "lucide-react";
 import logo from "@/assets/virinchi_full_logo_bg_removed.png";
 import flagUs from "@/assets/flag-us.svg";
-import flagIn from "@/assets/flag-in.svg";
 
 const footerLinks = {
   Platform: [
@@ -41,18 +40,6 @@ const offices = [
     ],
     flag: flagUs,
     flagAlt: "US",
-  },
-  {
-    entity: "virinchiAI Pvt Ltd",
-    lines: [
-      "WellWork, 5th Floor",
-      "MPM Corporate House",
-      "Plot No. 44, Jayabheri Pine Valley",
-      "Gachibowli, Hyderabad",
-      "Telangana 500032, India",
-    ],
-    flag: flagIn,
-    flagAlt: "India",
   },
 ];
 
